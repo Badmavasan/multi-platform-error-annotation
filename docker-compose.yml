@@ -4,13 +4,13 @@ services:
   db:
     image: postgres:16-alpine
     environment:
-      POSTGRES_DB: error_annotation
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -20,9 +20,9 @@ services:
     ports:
       - "8002:8000"
     environment:
-      DATABASE_URL: postgresql://postgres:postgres@db:5432/error_annotation
-      SECRET_KEY: change-me-in-production-32-chars-min
-      ADMIN_PASSWORD: change-me
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      SECRET_KEY: ${SECRET_KEY}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
     depends_on:
       db:
         condition: service_healthy
