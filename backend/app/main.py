@@ -5,7 +5,6 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, UploadFile, File, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from sqlalchemy import text
 from app.database import engine, Base, SessionLocal
 from app.seed import run_seed
 from app.routers import auth, users, errors, contexts, assignments, annotations, admin_annotations
@@ -17,28 +16,9 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 ALLOWED_EXTENSIONS = {"jpg", "jpeg", "png", "gif", "webp"}
 
 
-def _migrate(conn):
-    conn.execute(text(
-        "ALTER TABLE predefined_errors ADD COLUMN IF NOT EXISTS error_tag VARCHAR(100) NOT NULL DEFAULT ''"
-    ))
-    conn.execute(text("ALTER TABLE predefined_errors DROP COLUMN IF EXISTS name"))
-    conn.execute(text("ALTER TABLE users DROP COLUMN IF EXISTS email"))
-    conn.execute(text("ALTER TABLE annotations DROP COLUMN IF EXISTS has_missing_errors"))
-    conn.execute(text("ALTER TABLE annotations DROP COLUMN IF EXISTS missing_errors_text"))
-    conn.execute(text(
-        "ALTER TABLE annotations ADD COLUMN IF NOT EXISTS has_additional_errors BOOLEAN NOT NULL DEFAULT false"
-    ))
-    conn.execute(text(
-        "ALTER TABLE annotations ADD COLUMN IF NOT EXISTS additional_errors_text TEXT"
-    ))
-    conn.commit()
-
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     Base.metadata.create_all(bind=engine)
-    with engine.connect() as conn:
-        _migrate(conn)
     db = SessionLocal()
     try:
         run_seed(db)

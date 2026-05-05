@@ -1,13 +1,27 @@
+from pydantic import computed_field
 from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    DATABASE_URL: str = "postgresql://postgres:postgres@localhost:5432/error_annotation"
-    SECRET_KEY: str = "change-me-in-production"
+    POSTGRES_USER: str
+    POSTGRES_PASSWORD: str
+    POSTGRES_DB: str
+    POSTGRES_HOST: str = "localhost"
+    POSTGRES_PORT: int = 5432
+
+    SECRET_KEY: str
     ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24  # 24 hours
-    ADMIN_EMAIL: str = "admin@example.com"
-    ADMIN_PASSWORD: str = "admin123"
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24
+
+    ADMIN_PASSWORD: str
+
+    @computed_field
+    @property
+    def DATABASE_URL(self) -> str:
+        return (
+            f"postgresql://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}"
+            f"@{self.POSTGRES_HOST}:{self.POSTGRES_PORT}/{self.POSTGRES_DB}"
+        )
 
     class Config:
         env_file = ".env"
