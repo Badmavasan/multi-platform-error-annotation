@@ -11,3 +11,6 @@
 
 # Docker overrides with local secrets
 docker-compose.override.yml
+
+
+claude.md
