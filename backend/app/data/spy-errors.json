@@ -1,1 +1,102 @@
-[]
+[
+  {
+    "error_tag": "ACTION_MISSING",
+    "error_description": "Une action est manquante dans le programme de l'élève. La solution contient une instruction (déplacement, rotation, activation, etc.) que l'élève n'a pas écrite. Cette erreur peut apparaître à n'importe quel niveau du programme : dans une séquence plate, dans le corps d'une boucle Répéter, d'une boucle TantQue, ou à l'intérieur d'un bloc conditionnel Si."
+  },
+  {
+    "error_tag": "ACTION_UNNECESSARY",
+    "error_description": "Une action superflue est présente dans le programme de l'élève. L'élève a écrit une instruction (déplacement, rotation, activation, etc.) qui ne figure pas dans la solution. Cette action est en trop et ne correspond pas au comportement attendu du robot."
+  },
+  {
+    "error_tag": "ACTION_WRONG",
+    "error_description": "Une action est présente à la bonne position structurelle dans le programme mais est du mauvais type. Par exemple, l'élève a écrit TourneDroite (TurnRight) à la place de TourneGauche (TurnLeft), ou Avancer (Forward) à la place d'Activer (Activate). L'instruction existe mais ne réalise pas la bonne opération."
+  },
+  {
+    "error_tag": "REPEAT_MISSING",
+    "error_description": "Une boucle Répéter (for) est absente du programme de l'élève alors que la solution en requiert une. Cela peut concerner la boucle unique d'un niveau simple, la boucle externe d'une structure imbriquée, ou la boucle interne si l'externe est déjà présente. L'élève n'a pas utilisé la structure de répétition attendue."
+  },
+  {
+    "error_tag": "REPEAT_UNNECESSARY",
+    "error_description": "Le programme de l'élève contient une boucle Répéter (for) qui n'est pas présente dans la solution. L'élève a introduit une structure de répétition là où la solution attend une séquence simple ou une autre structure de contrôle."
+  },
+  {
+    "error_tag": "REPEAT_COUNT_WRONG",
+    "error_description": "Le nombre d'itérations d'une boucle Répéter est incorrect. La structure de la boucle est bien présente, mais le compteur ne correspond pas à la valeur attendue par la solution. Cela peut concerner une boucle simple (ex. répéter 6 fois au lieu de 4), la boucle externe ou interne d'une structure imbriquée. Une différence de 1 indique généralement une approximation, une différence plus grande indique une incompréhension plus profonde du nombre de répétitions nécessaires."
+  },
+  {
+    "error_tag": "REPEAT_BODY_ERROR",
+    "error_description": "Une erreur est détectée à l'intérieur du corps d'une boucle Répéter. Ce tag est émis en complément du tag principal de l'erreur et signale que le problème se situe dans la séquence répétée. Cela peut être une action manquante ou incorrecte, un bloc Si absent, une boucle imbriquée avec un mauvais compteur, une condition erronée, etc. Ce tag accompagne toujours un autre tag plus précis décrivant la nature de l'erreur."
+  },
+  {
+    "error_tag": "IF_MISSING",
+    "error_description": "Un bloc conditionnel Si (ou Si-Sinon) est absent du programme de l'élève alors que la solution en requiert un. Ce tag couvre également le cas où la branche Sinon (else) est manquante : un Si sans Sinon là où la solution attend un Si-Sinon est traité comme un bloc conditionnel manquant, car la branche alternative constitue une partie intégrante de la structure décisionnelle. L'erreur peut se situer au niveau principal du script, à l'intérieur d'une boucle Répéter ou d'une boucle TantQue."
+  },
+  {
+    "error_tag": "IF_UNNECESSARY",
+    "error_description": "Le programme de l'élève contient un bloc conditionnel Si (ou Si-Sinon) qui n'est pas présent dans la solution. L'élève a ajouté une structure conditionnelle là où la solution n'en requiert pas. Ce tag couvre aussi la présence d'un Si-Sinon là où la solution attend un simple Si."
+  },
+  {
+    "error_tag": "IF_BODY_ERROR",
+    "error_description": "Une erreur est détectée à l'intérieur d'un bloc conditionnel Si ou Si-Sinon — que ce soit dans la condition, la branche Alors (then) ou la branche Sinon (else). Ce tag est émis en complément du tag principal de l'erreur et signale que le problème se situe dans la structure conditionnelle. Cela peut être un mauvais capteur, une action manquante ou incorrecte dans une branche, une structure imbriquée absente, etc. Ce tag accompagne toujours un autre tag plus précis."
+  },
+  {
+    "error_tag": "WHILE_MISSING",
+    "error_description": "La boucle TantQue (while) ou Toujours (forever) est entièrement absente du programme de l'élève. La solution requiert une boucle conditionnelle pour faire répéter le comportement du robot tant qu'une condition est vraie (ou indéfiniment), mais l'élève n'a pas utilisé cette structure. Il a peut-être écrit une séquence plate ou une boucle Répéter à la place."
+  },
+  {
+    "error_tag": "WHILE_UNNECESSARY",
+    "error_description": "Le programme de l'élève contient une boucle TantQue (while) ou Toujours (forever) qui n'est pas présente dans la solution. L'élève a introduit une boucle conditionnelle là où la solution attend une autre structure (séquence, boucle Répéter, etc.)."
+  },
+  {
+    "error_tag": "WHILE_BODY_ERROR",
+    "error_description": "Une erreur est détectée à l'intérieur d'une boucle TantQue (while) ou Toujours (forever) — que ce soit dans la condition de la boucle, dans le corps principal, ou dans un bloc Si imbriqué. Ce tag est émis en complément du tag principal de l'erreur et signale que le problème se situe dans la structure de boucle conditionnelle. Ce tag accompagne toujours un autre tag plus précis décrivant la nature de l'erreur."
+  },
+  {
+    "error_tag": "CONDITION_MISSING",
+    "error_description": "Un capteur (condition) est absent là où la solution en attend un. L'élève a créé la structure de contrôle (Si, TantQue) mais n'a pas renseigné le capteur nécessaire pour évaluer l'état de l'environnement. Par exemple, la condition du bloc Si est vide alors que la solution attend un capteur comme MurDevant (WallFront) ou CheminGauche (PathLeft)."
+  },
+  {
+    "error_tag": "CONDITION_UNNECESSARY",
+    "error_description": "Un capteur (condition) est présent dans le programme de l'élève alors que la solution n'en attend pas à cet endroit. L'élève a renseigné un capteur superflu dans une structure de contrôle."
+  },
+  {
+    "error_tag": "CONDITION_WRONG",
+    "error_description": "Le capteur utilisé dans une condition est incorrect. La structure de contrôle (Si ou TantQue) est bien présente et possède un capteur, mais ce dernier ne correspond pas à celui attendu par la solution. Par exemple, l'élève a utilisé MurGauche (WallLeft) à la place de CheminDevant (PathFront), ou Sortie (Exit) à la place de PorteChamp (FieldGate). L'élève a sélectionné le mauvais détecteur de l'environnement."
+  },
+  {
+    "error_tag": "CONDITION_WRONG_LOGIC",
+    "error_description": "Un opérateur logique (Non/not, Et/and, Ou/or) est incorrect, manquant ou superflu dans une condition. Ce tag couvre plusieurs situations : (1) l'opérateur Non (not) est absent alors que la solution l'attend — ex. l'élève écrit tantque(sortie) au lieu de tantque(non(sortie)) ; (2) l'opérateur Non est présent alors qu'il ne devrait pas l'être ; (3) l'élève utilise Et (and) à la place de Ou (or) ou vice versa ; (4) une condition composée (Et/Ou) est manquante alors que la solution en attend une, ou est présente alors qu'un capteur simple suffit. Dans tous les cas, la logique booléenne de la condition ne correspond pas à la solution."
+  },
+  {
+    "error_tag": "INCORRECT_ERROR_POSITION_ACTION",
+    "error_description": "Une action est présente dans le programme de l'élève mais placée au mauvais endroit dans la hiérarchie du programme. L'instruction existe (elle n'est pas manquante) mais se trouve sous le mauvais bloc parent. Par exemple, une action est écrite après la boucle Répéter au lieu d'être à l'intérieur, ou elle est dans la branche Alors d'un Si au lieu d'être dans la boucle englobante. L'élève a bien identifié l'action nécessaire mais l'a mal positionnée dans la structure."
+  },
+  {
+    "error_tag": "INCORRECT_ERROR_POSITION_REPEAT",
+    "error_description": "Une boucle Répéter (for) est présente dans le programme de l'élève mais placée au mauvais endroit dans la hiérarchie. La boucle existe structurellement mais se trouve sous le mauvais parent. Par exemple, la boucle interne d'une structure imbriquée est placée à l'extérieur au lieu d'être dans le corps de la boucle externe, ou une boucle Répéter est imbriquée dans un bloc Si alors qu'elle devrait être à un niveau supérieur."
+  },
+  {
+    "error_tag": "INCORRECT_ERROR_POSITION_IF",
+    "error_description": "Un bloc conditionnel Si (ou Si-Sinon) est présent dans le programme de l'élève mais placé au mauvais endroit dans la hiérarchie. Le bloc conditionnel existe mais se trouve sous le mauvais parent. Par exemple, un Si est écrit après une boucle TantQue au lieu d'être à l'intérieur de son corps, ou un Si est imbriqué dans une boucle Répéter alors qu'il devrait être au niveau principal du script."
+  },
+  {
+    "error_tag": "INCORRECT_ERROR_POSITION_WHILE",
+    "error_description": "Une boucle TantQue (while) est présente dans le programme de l'élève mais placée au mauvais endroit dans la hiérarchie. La boucle conditionnelle existe mais se trouve sous le mauvais parent. Par exemple, elle est imbriquée dans un Si alors qu'elle devrait être au niveau principal, ou elle est dans le corps d'une boucle Répéter au lieu d'être au niveau supérieur."
+  },
+  {
+    "error_tag": "INCORRECT_ERROR_POSITION_FOREVER",
+    "error_description": "Une boucle Toujours (forever) est présente dans le programme de l'élève mais placée au mauvais endroit dans la hiérarchie. La boucle infinie existe structurellement mais se trouve sous le mauvais parent au lieu d'être à l'emplacement attendu dans la solution."
+  },
+  {
+    "error_tag": "SCRIPT_MISSING",
+    "error_description": "Un script robot entier est manquant dans le programme de l'élève. Dans les niveaux collaboratifs (multi-robots), la solution requiert que plusieurs robots soient programmés simultanément, mais l'élève n'a programmé qu'une partie des robots. Il manque au moins un script complet correspondant à un robot participant à la mission."
+  },
+  {
+    "error_tag": "SCRIPT_UNNECESSARY",
+    "error_description": "Le programme de l'élève contient un script robot supplémentaire qui n'est pas attendu par la solution. L'élève a programmé plus de robots que nécessaire pour ce niveau collaboratif. Le script en trop ne correspond à aucun robot de la solution."
+  },
+  {
+    "error_tag": "INCORRECT_SCRIPT_ORDER",
+    "error_description": "Les scripts des robots sont présents mais dans le mauvais ordre. Dans les niveaux collaboratifs à deux robots, le contenu du premier script de l'élève correspond mieux au deuxième script de la solution, et vice versa. L'élève a bien programmé les deux robots mais les a intervertis : le programme du robot 1 a été écrit à la place du robot 2 et réciproquement. Ce diagnostic est posé lorsque l'appariement inversé des scripts produit une distance d'édition strictement inférieure à l'appariement dans l'ordre normal."
+  }
+]

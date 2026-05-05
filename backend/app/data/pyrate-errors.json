@@ -8,18 +8,6 @@
     "error_description": "Le corps de la boucle 'pour' (for) ne correspond pas à la solution attendue : des instructions sont manquantes, incorrectes ou en trop dans le bloc d'itération."
   },
   {
-    "error_tag": "MISSING_STATEMENT",
-    "error_description": "Une instruction est absente dans le code de l'élève alors qu'elle est requise par la solution correcte."
-  },
-  {
-    "error_tag": "UNNECESSARY_STATEMENT",
-    "error_description": "Une instruction est présente dans le code de l'élève alors qu'elle n'est pas attendue dans la solution correcte."
-  },
-  {
-    "error_tag": "ERROR_VALUE_PARAMETER",
-    "error_description": "La valeur fournie en paramètre d'un appel de fonction est incorrecte (valeur erronée ou type inattendu)."
-  },
-  {
     "error_tag": "VA_DECLARATION_INITIALIZATION_ERROR",
     "error_description": "Une variable est déclarée et initialisée avec une valeur incorrecte. La valeur d'initialisation ne correspond pas à celle attendue par la solution correcte."
   },
@@ -56,26 +44,6 @@
     "error_description": "Une branche 'sinon' (else) est présente dans le code de l'élève mais n'est pas attendue dans la solution correcte."
   },
   {
-    "error_tag": "CS_ELIF_CONDITION_ERROR",
-    "error_description": "La condition de la branche 'sinon si' (elif) est incorrecte. L'expression de test ne correspond pas à celle attendue dans la solution correcte."
-  },
-  {
-    "error_tag": "F_DEFINITION_MISSING",
-    "error_description": "La définition d'une fonction est absente dans le code de l'élève alors qu'elle est attendue. L'élève n'a pas créé la fonction requise."
-  },
-  {
-    "error_tag": "F_DEFINITION_UNNECESSARY",
-    "error_description": "Une définition de fonction est présente dans le code de l'élève mais n'est pas attendue dans la solution correcte."
-  },
-  {
-    "error_tag": "F_DEFINITION_ERROR_ARG",
-    "error_description": "Les paramètres (arguments) de la définition d'une fonction sont incorrects. Le nombre ou le nom des paramètres ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "F_DEFINITION_ERROR_RETURN",
-    "error_description": "L'instruction de retour (return) d'une fonction est erronée : elle est absente alors qu'elle devrait être présente, ou présente alors qu'elle ne devrait pas l'être, ou encore sa valeur est incorrecte."
-  },
-  {
     "error_tag": "F_CALL_MISSING",
     "error_description": "Un appel de fonction est absent dans le code de l'élève alors qu'il est attendu dans la solution correcte."
   },
@@ -84,24 +52,12 @@
     "error_description": "Un appel de fonction est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
   },
   {
-    "error_tag": "F_CALL_ARG_ERROR",
-    "error_description": "Les arguments fournis lors d'un appel de fonction sont incorrects. La valeur, le nombre ou le type des arguments ne correspond pas à ce qui est attendu."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_PRINT",
-    "error_description": "Un appel à la fonction 'print' (affichage) est absent dans le code de l'élève alors qu'il est attendu dans la solution correcte."
-  },
-  {
     "error_tag": "F_CALL_UNNECESSARY_PRINT",
     "error_description": "Un appel à la fonction 'print' (affichage) est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
   },
   {
     "error_tag": "F_CALL_PRINT_ERROR_ARG",
     "error_description": "L'argument fourni à la fonction 'print' est incorrect. La valeur affichée ne correspond pas à ce qui est attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_INCORRECT_POSITION_PRINT",
-    "error_description": "L'appel à la fonction 'print' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
   },
   {
     "error_tag": "F_CALL_MISSING_AVANCER",
@@ -136,64 +92,8 @@
     "error_description": "L'appel à la fonction 'tourner' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
   },
   {
-    "error_tag": "F_CALL_MISSING_ARC",
-    "error_description": "Un appel à la fonction 'arc' (tracer un arc de cercle) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_ARC",
-    "error_description": "Un appel à la fonction 'arc' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_ARC_ERROR",
-    "error_description": "L'argument fourni à la fonction 'arc' est incorrect. Le rayon, l'angle ou les paramètres de l'arc ne correspondent pas à ce qui est attendu."
-  },
-  {
-    "error_tag": "F_CALL_INCORRECT_POSITION_ARC",
-    "error_description": "L'appel à la fonction 'arc' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_COULEUR",
-    "error_description": "Un appel à la fonction 'couleur' (changer la couleur du tracé) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_COULEUR",
-    "error_description": "Un appel à la fonction 'couleur' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_COULEUR_ERROR",
-    "error_description": "L'argument fourni à la fonction 'couleur' est incorrect. La couleur spécifiée ne correspond pas à celle attendue dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_HAUT",
-    "error_description": "Un appel à la fonction 'haut' (déplacer vers le haut) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
     "error_tag": "F_CALL_UNNECESSARY_HAUT",
     "error_description": "Un appel à la fonction 'haut' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_HAUT_ERROR",
-    "error_description": "L'argument fourni à la fonction 'haut' est incorrect. La valeur de déplacement vers le haut ne correspond pas à ce qui est attendu."
-  },
-  {
-    "error_tag": "F_CALL_INCORRECT_POSITION_HAUT",
-    "error_description": "L'appel à la fonction 'haut' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_BAS",
-    "error_description": "Un appel à la fonction 'bas' (déplacer vers le bas) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_BAS",
-    "error_description": "Un appel à la fonction 'bas' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_BAS_ERROR",
-    "error_description": "L'argument fourni à la fonction 'bas' est incorrect. La valeur de déplacement vers le bas ne correspond pas à ce qui est attendu."
-  },
-  {
-    "error_tag": "F_CALL_INCORRECT_POSITION_BAS",
-    "error_description": "L'appel à la fonction 'bas' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
   },
   {
     "error_tag": "F_CALL_MISSING_GAUCHE",
@@ -228,48 +128,12 @@
     "error_description": "L'appel à la fonction 'droite' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
   },
   {
-    "error_tag": "F_CALL_MISSING_POSER",
-    "error_description": "Un appel à la fonction 'poser' (poser le crayon / abaisser le stylo) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_POSER",
-    "error_description": "Un appel à la fonction 'poser' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_POSER_ERROR",
-    "error_description": "L'appel à la fonction 'poser' contient une erreur dans ses arguments ou son utilisation."
-  },
-  {
-    "error_tag": "F_CALL_INCORRECT_POSITION_POSER",
-    "error_description": "L'appel à la fonction 'poser' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_LEVER",
-    "error_description": "Un appel à la fonction 'lever' (lever le crayon / relever le stylo) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_LEVER",
-    "error_description": "Un appel à la fonction 'lever' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_LEVER_ERROR",
-    "error_description": "L'appel à la fonction 'lever' contient une erreur dans ses arguments ou son utilisation."
-  },
-  {
-    "error_tag": "F_CALL_INCORRECT_POSITION_LEVER",
-    "error_description": "L'appel à la fonction 'lever' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
     "error_tag": "F_CALL_MISSING_OUVRIR",
     "error_description": "Un appel à la fonction 'ouvrir' (ouvrir un élément / une porte) est absent dans le code de l'élève alors qu'il est attendu."
   },
   {
     "error_tag": "F_CALL_UNNECESSARY_OUVRIR",
     "error_description": "Un appel à la fonction 'ouvrir' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_OUVRIR_ERROR",
-    "error_description": "L'argument fourni à la fonction 'ouvrir' est incorrect. La valeur ou l'élément à ouvrir ne correspond pas à ce qui est attendu."
   },
   {
     "error_tag": "F_CALL_INCORRECT_POSITION_OUVRIR",
@@ -396,10 +260,6 @@
     "error_description": "Un appel à la fonction 'detecter_obstacle' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
   },
   {
-    "error_tag": "F_CALL_DETECTER_OBSTACLE_ERROR",
-    "error_description": "L'appel à la fonction 'detecter_obstacle' contient une erreur dans ses arguments ou son utilisation."
-  },
-  {
     "error_tag": "F_CALL_INCORRECT_POSITION_DETECTER_OBSTACLE",
     "error_description": "L'appel à la fonction 'detecter_obstacle' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
   },
@@ -492,10 +352,6 @@
     "error_description": "Une instruction d'affectation (assignation d'une valeur à une variable) contient une erreur. La valeur assignée, la variable cible ou l'expression utilisée est incorrecte."
   },
   {
-    "error_tag": "EXP_ERROR_ASSIGNMENT_MISSING",
-    "error_description": "Une instruction d'affectation est complètement absente dans le code de l'élève. L'opérateur d'assignation, la variable et la constante sont tous manquants simultanément dans le même contexte."
-  },
-  {
     "error_tag": "EXP_ERROR_ASSIGNMENT_UNNECESSARY",
     "error_description": "Une instruction d'affectation est présente dans le code de l'élève mais n'est pas attendue dans la solution correcte. L'assignation est superflue dans ce contexte."
   },
@@ -510,9 +366,5 @@
   {
     "error_tag": "EXP_FUNCTION_RESULT_NOT_ASSIGNED",
     "error_description": "Une fonction qui retourne une valeur (comme 'lire_nombre', 'lire_chaine', 'mesurer_hauteur' ou 'detecter_obstacle') est appelée mais son résultat n'est pas stocké dans une variable. L'élève a omis d'affecter la valeur retournée."
-  },
-  {
-    "error_tag": "PA_PROBLEM_DECOMPOSITION_ALGORITHMIC_STRATEGIE_ERROR",
-    "error_description": "L'approche algorithmique globale choisie par l'élève est incorrecte. La décomposition du problème ou la stratégie de résolution ne correspond pas à la solution attendue, indépendamment des erreurs de détail dans le code."
   }
 ]
