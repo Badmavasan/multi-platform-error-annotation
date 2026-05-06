@@ -43,6 +43,7 @@ def run_seed(db: Session):
             error_tag = entry.get("error_tag", "").strip()
             if not error_tag:
                 continue
+            description = entry.get("error_description") or entry.get("description", "")
             exists = (
                 db.query(PredefinedError)
                 .filter(
@@ -55,8 +56,10 @@ def run_seed(db: Session):
                 db.add(PredefinedError(
                     platform=platform,
                     error_tag=error_tag,
-                    description=entry.get("description", ""),
+                    description=description,
                     display_order=entry.get("display_order", i),
                 ))
+            elif not exists.description and description:
+                exists.description = description
 
     db.commit()
