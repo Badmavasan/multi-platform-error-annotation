@@ -81,6 +81,11 @@ export default function ContextForm() {
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (!file) return
+    if (file.size > 3 * 1024 * 1024) {
+      alert('L\'image ne doit pas dépasser 3 Mo.')
+      e.target.value = ''
+      return
+    }
     setUploading(true)
     try {
       const res = await uploadImage(file)
