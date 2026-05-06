@@ -163,6 +163,11 @@ export default function AnnotateContext() {
           <h2 className="font-display font-bold text-base" style={{ color: 'var(--text-primary)' }}>
             Annotation
           </h2>
+          {ctx.description && (
+            <p className="mt-2 text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              {ctx.description}
+            </p>
+          )}
         </div>
 
         <div className="px-6 py-6 flex flex-col gap-10">
