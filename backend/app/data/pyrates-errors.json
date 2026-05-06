@@ -1,23 +1,15 @@
 [
   {
-    "error_tag": "VA_DECLARATION_INITIALIZATION_ERROR",
-    "error_description": "Une variable est déclarée et initialisée avec une valeur incorrecte. La valeur d'initialisation ne correspond pas à celle attendue par la solution correcte."
-  },
-  {
-    "error_tag": "CS_MISSING",
-    "error_description": "Une structure conditionnelle (instruction 'si' / 'if') est absente dans le code de l'élève alors qu'elle est nécessaire pour résoudre le problème."
-  },
-  {
-    "error_tag": "CS_UNNECESSARY",
-    "error_description": "Une structure conditionnelle (instruction 'si' / 'if') est présente dans le code de l'élève alors qu'elle n'est pas attendue dans la solution correcte."
-  },
-  {
     "error_tag": "CS_BODY_ERROR",
     "error_description": "Le corps d'une structure conditionnelle contient une erreur : une ou plusieurs instructions à l'intérieur du bloc 'si' / 'sinon' sont incorrectes, manquantes ou en trop."
   },
   {
     "error_tag": "CS_BODY_MISPLACED",
     "error_description": "La structure conditionnelle est présente mais placée au mauvais endroit dans le code. L'ordre d'apparition du bloc 'si' ne correspond pas à la solution attendue."
+  },
+  {
+    "error_tag": "CS_MISSING",
+    "error_description": "Une structure conditionnelle (instruction 'si' / 'if') est absente dans le code de l'élève alors qu'elle est nécessaire pour résoudre le problème."
   },
   {
     "error_tag": "CS_MISSING_ELIF",
@@ -28,6 +20,10 @@
     "error_description": "Une branche 'sinon' (else) est absente dans la structure conditionnelle de l'élève alors qu'elle est requise par la solution correcte."
   },
   {
+    "error_tag": "CS_UNNECESSARY",
+    "error_description": "Une structure conditionnelle (instruction 'si' / 'if') est présente dans le code de l'élève alors qu'elle n'est pas attendue dans la solution correcte."
+  },
+  {
     "error_tag": "CS_UNNECESSARY_ELIF",
     "error_description": "Une branche 'sinon si' (elif) est présente dans le code de l'élève mais n'est pas attendue dans la solution correcte."
   },
@@ -36,264 +32,316 @@
     "error_description": "Une branche 'sinon' (else) est présente dans le code de l'élève mais n'est pas attendue dans la solution correcte."
   },
   {
-    "error_tag": "F_CALL_MISSING",
-    "error_description": "Un appel de fonction est absent dans le code de l'élève alors qu'il est attendu dans la solution correcte."
+    "error_tag": "EXP_ERROR_ASSIGNMENT",
+    "error_description": "Une instruction d'affectation (assignation d'une valeur à une variable) contient une erreur. La valeur assignée, la variable cible ou l'expression utilisée est incorrecte."
   },
   {
-    "error_tag": "F_CALL_UNNECESSARY",
-    "error_description": "Un appel de fonction est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+    "error_tag": "EXP_ERROR_ASSIGNMENT_MISPLACED",
+    "error_description": "Une instruction d'affectation est présente mais placée au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
   },
   {
-    "error_tag": "F_CALL_UNNECESSARY_PRINT",
-    "error_description": "Un appel à la fonction 'print' (affichage) est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+    "error_tag": "EXP_ERROR_ASSIGNMENT_UNNECESSARY",
+    "error_description": "Une instruction d'affectation est présente dans le code de l'élève mais n'est pas attendue dans la solution correcte. L'assignation est superflue dans ce contexte."
   },
   {
-    "error_tag": "F_CALL_PRINT_ERROR_ARG",
-    "error_description": "L'argument fourni à la fonction 'print' est incorrect. La valeur affichée ne correspond pas à ce qui est attendu dans la solution correcte."
+    "error_tag": "EXP_ERROR_CONDITIONAL_BRANCH",
+    "error_description": "La condition d'une structure conditionnelle (if) est incorrecte. L'expression de comparaison ou l'opération logique utilisée ne correspond pas à la solution attendue."
   },
   {
-    "error_tag": "F_CALL_MISSING_AVANCER",
-    "error_description": "Un appel à la fonction 'avancer' (faire avancer le personnage) est absent dans le code de l'élève alors qu'il est attendu."
+    "error_tag": "EXP_ERROR_OPERATION",
+    "error_description": "Une opération arithmétique ou logique est incorrecte. L'expression calculée (par exemple a + b, a * 2) ne correspond pas à l'opération attendue dans la solution correcte."
   },
   {
-    "error_tag": "F_CALL_UNNECESSARY_AVANCER",
-    "error_description": "Un appel à la fonction 'avancer' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+    "error_tag": "EXP_FUNCTION_RESULT_NOT_ASSIGNED",
+    "error_description": "Une fonction qui retourne une valeur (comme 'lire_nombre', 'lire_chaine', 'mesurer_hauteur' ou 'detecter_obstacle') est appelée mais son résultat n'est pas stocké dans une variable. L'élève a omis d'affecter la valeur retournée."
   },
   {
     "error_tag": "F_CALL_AVANCER_ERROR",
     "error_description": "L'argument fourni à la fonction 'avancer' est incorrect. La distance ou la valeur de déplacement ne correspond pas à ce qui est attendu."
   },
   {
-    "error_tag": "F_CALL_INCORRECT_POSITION_AVANCER",
-    "error_description": "L'appel à la fonction 'avancer' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_TOURNER",
-    "error_description": "Un appel à la fonction 'tourner' (faire pivoter le personnage) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_TOURNER",
-    "error_description": "Un appel à la fonction 'tourner' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_TOURNER_ERROR",
-    "error_description": "L'argument fourni à la fonction 'tourner' est incorrect. L'angle ou la direction de rotation ne correspond pas à ce qui est attendu."
-  },
-  {
-    "error_tag": "F_CALL_INCORRECT_POSITION_TOURNER",
-    "error_description": "L'appel à la fonction 'tourner' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_HAUT",
-    "error_description": "Un appel à la fonction 'haut' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_GAUCHE",
-    "error_description": "Un appel à la fonction 'gauche' (déplacer vers la gauche) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_GAUCHE",
-    "error_description": "Un appel à la fonction 'gauche' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_GAUCHE_ERROR",
-    "error_description": "L'argument fourni à la fonction 'gauche' est incorrect. La valeur de déplacement vers la gauche ne correspond pas à ce qui est attendu."
-  },
-  {
-    "error_tag": "F_CALL_INCORRECT_POSITION_GAUCHE",
-    "error_description": "L'appel à la fonction 'gauche' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_DROITE",
-    "error_description": "Un appel à la fonction 'droite' (déplacer vers la droite) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_DROITE",
-    "error_description": "Un appel à la fonction 'droite' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_DROITE_ERROR",
-    "error_description": "L'argument fourni à la fonction 'droite' est incorrect. La valeur de déplacement vers la droite ne correspond pas à ce qui est attendu."
-  },
-  {
-    "error_tag": "F_CALL_INCORRECT_POSITION_DROITE",
-    "error_description": "L'appel à la fonction 'droite' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_OUVRIR",
-    "error_description": "Un appel à la fonction 'ouvrir' (ouvrir un élément / une porte) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_OUVRIR",
-    "error_description": "Un appel à la fonction 'ouvrir' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_INCORRECT_POSITION_OUVRIR",
-    "error_description": "L'appel à la fonction 'ouvrir' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_SAUTER",
-    "error_description": "Un appel à la fonction 'sauter' (faire sauter le personnage) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_SAUTER",
-    "error_description": "Un appel à la fonction 'sauter' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_SAUTER_ERROR",
-    "error_description": "L'argument fourni à la fonction 'sauter' est incorrect. La hauteur ou la valeur du saut ne correspond pas à ce qui est attendu."
-  },
-  {
-    "error_tag": "F_CALL_INCORRECT_POSITION_SAUTER",
-    "error_description": "L'appel à la fonction 'sauter' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_COUP",
-    "error_description": "Un appel à la fonction 'coup' (effectuer un coup / une frappe) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_COUP",
-    "error_description": "Un appel à la fonction 'coup' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+    "error_tag": "F_CALL_BAS_ERROR",
+    "error_description": "L'argument fourni à la fonction 'bas' est incorrect. La valeur de déplacement vers le bas ne correspond pas à ce qui est attendu."
   },
   {
     "error_tag": "F_CALL_COUP_ERROR",
     "error_description": "L'argument fourni à la fonction 'coup' est incorrect. La valeur ou la direction du coup ne correspond pas à ce qui est attendu."
   },
   {
+    "error_tag": "F_CALL_DETECTER_OBSTACLE_ERROR",
+    "error_description": "L'argument fourni à la fonction 'detecter_obstacle' est incorrect. La valeur ou la direction de détection ne correspond pas à ce qui est attendu."
+  },
+  {
+    "error_tag": "F_CALL_DROITE_ERROR",
+    "error_description": "L'argument fourni à la fonction 'droite' est incorrect. La valeur de déplacement vers la droite ne correspond pas à ce qui est attendu."
+  },
+  {
+    "error_tag": "F_CALL_GAUCHE_ERROR",
+    "error_description": "L'argument fourni à la fonction 'gauche' est incorrect. La valeur de déplacement vers la gauche ne correspond pas à ce qui est attendu."
+  },
+  {
+    "error_tag": "F_CALL_INCORRECT_POSITION_AVANCER",
+    "error_description": "L'appel à la fonction 'avancer' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
+  },
+  {
     "error_tag": "F_CALL_INCORRECT_POSITION_COUP",
     "error_description": "L'appel à la fonction 'coup' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_SAUTER_HAUTEUR",
-    "error_description": "Un appel à la fonction 'sauter_hauteur' (sauter à une hauteur précise) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_SAUTER_HAUTEUR",
-    "error_description": "Un appel à la fonction 'sauter_hauteur' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_SAUTER_HAUTEUR_ERROR",
-    "error_description": "L'argument fourni à la fonction 'sauter_hauteur' est incorrect. La hauteur cible du saut ne correspond pas à ce qui est attendu."
-  },
-  {
-    "error_tag": "F_CALL_INCORRECT_POSITION_SAUTER_HAUTEUR",
-    "error_description": "L'appel à la fonction 'sauter_hauteur' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_SAUTER_HAUT",
-    "error_description": "Un appel à la fonction 'sauter_haut' (sauter vers le haut) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_SAUTER_HAUT",
-    "error_description": "Un appel à la fonction 'sauter_haut' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_SAUTER_HAUT_ERROR",
-    "error_description": "L'argument fourni à la fonction 'sauter_haut' est incorrect. La valeur du saut vers le haut ne correspond pas à ce qui est attendu."
-  },
-  {
-    "error_tag": "F_CALL_INCORRECT_POSITION_SAUTER_HAUT",
-    "error_description": "L'appel à la fonction 'sauter_haut' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_LIRE_CHAINE",
-    "error_description": "Un appel à la fonction 'lire_chaine' (lire une chaîne de caractères saisie par l'utilisateur) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_LIRE_CHAINE",
-    "error_description": "Un appel à la fonction 'lire_chaine' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_LIRE_CHAINE_ERROR",
-    "error_description": "L'appel à la fonction 'lire_chaine' contient une erreur dans ses arguments ou son utilisation."
-  },
-  {
-    "error_tag": "F_CALL_INCORRECT_POSITION_LIRE_CHAINE",
-    "error_description": "L'appel à la fonction 'lire_chaine' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_LIRE_NOMBRE",
-    "error_description": "Un appel à la fonction 'lire_nombre' (lire un nombre entier saisi par l'utilisateur) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_LIRE_NOMBRE",
-    "error_description": "Un appel à la fonction 'lire_nombre' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_LIRE_NOMBRE_ERROR",
-    "error_description": "L'appel à la fonction 'lire_nombre' contient une erreur dans ses arguments ou son utilisation."
-  },
-  {
-    "error_tag": "F_CALL_INCORRECT_POSITION_LIRE_NOMBRE",
-    "error_description": "L'appel à la fonction 'lire_nombre' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_TIRER",
-    "error_description": "Un appel à la fonction 'tirer' (tirer un projectile) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_TIRER",
-    "error_description": "Un appel à la fonction 'tirer' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
-  },
-  {
-    "error_tag": "F_CALL_TIRER_ERROR",
-    "error_description": "L'argument fourni à la fonction 'tirer' est incorrect. La valeur ou la direction du tir ne correspond pas à ce qui est attendu."
-  },
-  {
-    "error_tag": "F_CALL_INCORRECT_POSITION_TIRER",
-    "error_description": "L'appel à la fonction 'tirer' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "F_CALL_MISSING_DETECTER_OBSTACLE",
-    "error_description": "Un appel à la fonction 'detecter_obstacle' (détecter la présence d'un obstacle) est absent dans le code de l'élève alors qu'il est attendu."
-  },
-  {
-    "error_tag": "F_CALL_UNNECESSARY_DETECTER_OBSTACLE",
-    "error_description": "Un appel à la fonction 'detecter_obstacle' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
   },
   {
     "error_tag": "F_CALL_INCORRECT_POSITION_DETECTER_OBSTACLE",
     "error_description": "L'appel à la fonction 'detecter_obstacle' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
   },
   {
-    "error_tag": "F_CALL_MISSING_MESURER_HAUTEUR",
-    "error_description": "Un appel à la fonction 'mesurer_hauteur' (mesurer la hauteur d'un élément) est absent dans le code de l'élève alors qu'il est attendu."
+    "error_tag": "F_CALL_INCORRECT_POSITION_DROITE",
+    "error_description": "L'appel à la fonction 'droite' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
   },
   {
-    "error_tag": "F_CALL_UNNECESSARY_MESURER_HAUTEUR",
-    "error_description": "Un appel à la fonction 'mesurer_hauteur' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+    "error_tag": "F_CALL_INCORRECT_POSITION_GAUCHE",
+    "error_description": "L'appel à la fonction 'gauche' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
   },
   {
-    "error_tag": "F_CALL_MESURER_HAUTEUR_ERROR",
-    "error_description": "L'appel à la fonction 'mesurer_hauteur' contient une erreur dans ses arguments ou son utilisation."
+    "error_tag": "F_CALL_INCORRECT_POSITION_LIRE_CHAINE",
+    "error_description": "L'appel à la fonction 'lire_chaine' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
+  },
+  {
+    "error_tag": "F_CALL_INCORRECT_POSITION_LIRE_NOMBRE",
+    "error_description": "L'appel à la fonction 'lire_nombre' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
   },
   {
     "error_tag": "F_CALL_INCORRECT_POSITION_MESURER_HAUTEUR",
     "error_description": "L'appel à la fonction 'mesurer_hauteur' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
   },
   {
-    "error_tag": "LO_FOR_MISSING",
-    "error_description": "Une boucle 'pour' (for) est absente dans le code de l'élève alors qu'elle est requise par la solution correcte pour répéter un bloc d'instructions un nombre déterminé de fois."
+    "error_tag": "F_CALL_INCORRECT_POSITION_OUVRIR",
+    "error_description": "L'appel à la fonction 'ouvrir' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
   },
   {
-    "error_tag": "LO_WHILE_MISSING",
-    "error_description": "Une boucle 'tant que' (while) est absente dans le code de l'élève alors qu'elle est requise par la solution correcte pour répéter un bloc d'instructions tant qu'une condition est vraie."
+    "error_tag": "F_CALL_INCORRECT_POSITION_SAUTER",
+    "error_description": "L'appel à la fonction 'sauter' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
   },
   {
-    "error_tag": "LO_FOR_UNNECESSARY",
-    "error_description": "Une boucle 'pour' (for) est présente dans le code de l'élève alors qu'elle n'est pas attendue dans la solution correcte."
+    "error_tag": "F_CALL_INCORRECT_POSITION_SAUTER_HAUT",
+    "error_description": "L'appel à la fonction 'sauter_haut' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
   },
   {
-    "error_tag": "LO_WHILE_UNNECESSARY",
-    "error_description": "Une boucle 'tant que' (while) est présente dans le code de l'élève alors qu'elle n'est pas attendue dans la solution correcte."
+    "error_tag": "F_CALL_INCORRECT_POSITION_SAUTER_HAUTEUR",
+    "error_description": "L'appel à la fonction 'sauter_hauteur' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
+  },
+  {
+    "error_tag": "F_CALL_INCORRECT_POSITION_TIRER",
+    "error_description": "L'appel à la fonction 'tirer' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
+  },
+  {
+    "error_tag": "F_CALL_INCORRECT_POSITION_TOURNER",
+    "error_description": "L'appel à la fonction 'tourner' est présent mais placé au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
+  },
+  {
+    "error_tag": "F_CALL_LIRE_CHAINE_ERROR",
+    "error_description": "L'appel à la fonction 'lire_chaine' contient une erreur dans ses arguments ou son utilisation."
+  },
+  {
+    "error_tag": "F_CALL_LIRE_NOMBRE_ERROR",
+    "error_description": "L'appel à la fonction 'lire_nombre' contient une erreur dans ses arguments ou son utilisation."
+  },
+  {
+    "error_tag": "F_CALL_MESURER_HAUTEUR_ERROR",
+    "error_description": "L'appel à la fonction 'mesurer_hauteur' contient une erreur dans ses arguments ou son utilisation."
+  },
+  {
+    "error_tag": "F_CALL_MISSING",
+    "error_description": "Un appel de fonction est absent dans le code de l'élève alors qu'il est attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_MISSING_AVANCER",
+    "error_description": "Un appel à la fonction 'avancer' (faire avancer le personnage) est absent dans le code de l'élève alors qu'il est attendu."
+  },
+  {
+    "error_tag": "F_CALL_MISSING_COUP",
+    "error_description": "Un appel à la fonction 'coup' (effectuer un coup / une frappe) est absent dans le code de l'élève alors qu'il est attendu."
+  },
+  {
+    "error_tag": "F_CALL_MISSING_DETECTER_OBSTACLE",
+    "error_description": "Un appel à la fonction 'detecter_obstacle' (détecter la présence d'un obstacle) est absent dans le code de l'élève alors qu'il est attendu."
+  },
+  {
+    "error_tag": "F_CALL_MISSING_DROITE",
+    "error_description": "Un appel à la fonction 'droite' (déplacer vers la droite) est absent dans le code de l'élève alors qu'il est attendu."
+  },
+  {
+    "error_tag": "F_CALL_MISSING_GAUCHE",
+    "error_description": "Un appel à la fonction 'gauche' (déplacer vers la gauche) est absent dans le code de l'élève alors qu'il est attendu."
+  },
+  {
+    "error_tag": "F_CALL_MISSING_LIRE_CHAINE",
+    "error_description": "Un appel à la fonction 'lire_chaine' (lire une chaîne de caractères saisie par l'utilisateur) est absent dans le code de l'élève alors qu'il est attendu."
+  },
+  {
+    "error_tag": "F_CALL_MISSING_LIRE_NOMBRE",
+    "error_description": "Un appel à la fonction 'lire_nombre' (lire un nombre entier saisi par l'utilisateur) est absent dans le code de l'élève alors qu'il est attendu."
+  },
+  {
+    "error_tag": "F_CALL_MISSING_MESURER_HAUTEUR",
+    "error_description": "Un appel à la fonction 'mesurer_hauteur' (mesurer la hauteur d'un élément) est absent dans le code de l'élève alors qu'il est attendu."
+  },
+  {
+    "error_tag": "F_CALL_MISSING_OUVRIR",
+    "error_description": "Un appel à la fonction 'ouvrir' (ouvrir un élément / une porte) est absent dans le code de l'élève alors qu'il est attendu."
+  },
+  {
+    "error_tag": "F_CALL_MISSING_SAUTER",
+    "error_description": "Un appel à la fonction 'sauter' (faire sauter le personnage) est absent dans le code de l'élève alors qu'il est attendu."
+  },
+  {
+    "error_tag": "F_CALL_MISSING_SAUTER_HAUT",
+    "error_description": "Un appel à la fonction 'sauter_haut' (sauter vers le haut) est absent dans le code de l'élève alors qu'il est attendu."
+  },
+  {
+    "error_tag": "F_CALL_MISSING_SAUTER_HAUTEUR",
+    "error_description": "Un appel à la fonction 'sauter_hauteur' (sauter à une hauteur précise) est absent dans le code de l'élève alors qu'il est attendu."
+  },
+  {
+    "error_tag": "F_CALL_MISSING_TIRER",
+    "error_description": "Un appel à la fonction 'tirer' (tirer un projectile) est absent dans le code de l'élève alors qu'il est attendu."
+  },
+  {
+    "error_tag": "F_CALL_MISSING_TOURNER",
+    "error_description": "Un appel à la fonction 'tourner' (faire pivoter le personnage) est absent dans le code de l'élève alors qu'il est attendu."
+  },
+  {
+    "error_tag": "F_CALL_OUVRIR_ERROR",
+    "error_description": "L'argument fourni à la fonction 'ouvrir' est incorrect. La valeur passée ne correspond pas à ce qui est attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_PRINT_ERROR_ARG",
+    "error_description": "L'argument fourni à la fonction 'print' est incorrect. La valeur affichée ne correspond pas à ce qui est attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_SAUTER_ERROR",
+    "error_description": "L'argument fourni à la fonction 'sauter' est incorrect. La hauteur ou la valeur du saut ne correspond pas à ce qui est attendu."
+  },
+  {
+    "error_tag": "F_CALL_SAUTER_HAUTEUR_ERROR",
+    "error_description": "L'argument fourni à la fonction 'sauter_hauteur' est incorrect. La hauteur cible du saut ne correspond pas à ce qui est attendu."
+  },
+  {
+    "error_tag": "F_CALL_SAUTER_HAUT_ERROR",
+    "error_description": "L'argument fourni à la fonction 'sauter_haut' est incorrect. La valeur du saut vers le haut ne correspond pas à ce qui est attendu."
+  },
+  {
+    "error_tag": "F_CALL_TIRER_ERROR",
+    "error_description": "L'argument fourni à la fonction 'tirer' est incorrect. La valeur ou la direction du tir ne correspond pas à ce qui est attendu."
+  },
+  {
+    "error_tag": "F_CALL_TOURNER_ERROR",
+    "error_description": "L'argument fourni à la fonction 'tourner' est incorrect. L'angle ou la direction de rotation ne correspond pas à ce qui est attendu."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY",
+    "error_description": "Un appel de fonction est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_AVANCER",
+    "error_description": "Un appel à la fonction 'avancer' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_BAS",
+    "error_description": "Un appel à la fonction 'bas' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_COUP",
+    "error_description": "Un appel à la fonction 'coup' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_DETECTER_OBSTACLE",
+    "error_description": "Un appel à la fonction 'detecter_obstacle' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_DROITE",
+    "error_description": "Un appel à la fonction 'droite' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_GAUCHE",
+    "error_description": "Un appel à la fonction 'gauche' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_HAUT",
+    "error_description": "Un appel à la fonction 'haut' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_LIRE_CHAINE",
+    "error_description": "Un appel à la fonction 'lire_chaine' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_LIRE_NOMBRE",
+    "error_description": "Un appel à la fonction 'lire_nombre' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_MESURER_HAUTEUR",
+    "error_description": "Un appel à la fonction 'mesurer_hauteur' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_OUVRIR",
+    "error_description": "Un appel à la fonction 'ouvrir' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_POSER",
+    "error_description": "Un appel à la fonction 'poser' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_PRINT",
+    "error_description": "Un appel à la fonction 'print' (affichage) est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_SAUTER",
+    "error_description": "Un appel à la fonction 'sauter' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_SAUTER_HAUT",
+    "error_description": "Un appel à la fonction 'sauter_haut' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_SAUTER_HAUTEUR",
+    "error_description": "Un appel à la fonction 'sauter_hauteur' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_TIRER",
+    "error_description": "Un appel à la fonction 'tirer' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_CALL_UNNECESSARY_TOURNER",
+    "error_description": "Un appel à la fonction 'tourner' est présent dans le code de l'élève alors qu'il n'est pas attendu dans la solution correcte."
+  },
+  {
+    "error_tag": "F_DEFINITION_ERROR_RETURN",
+    "error_description": "La valeur retournée par la définition de fonction est incorrecte. La valeur de retour ne correspond pas à celle attendue dans la solution correcte."
+  },
+  {
+    "error_tag": "F_DEFINITION_UNNECESSARY",
+    "error_description": "Une définition de fonction est présente dans le code de l'élève alors qu'elle n'est pas attendue dans la solution correcte."
+  },
+  {
+    "error_tag": "LO_BODY_ERROR",
+    "error_description": "Le corps de la boucle contient une erreur : une instruction à l'intérieur de la boucle est incorrecte, manquante ou en trop."
+  },
+  {
+    "error_tag": "LO_BODY_MISPLACED",
+    "error_description": "Une instruction qui devrait se trouver dans le corps de la boucle est présente dans le code mais placée au mauvais endroit (en dehors de la boucle ou dans un mauvais bloc)."
+  },
+  {
+    "error_tag": "LO_BODY_MISSING_NOT_PRESENT_ANYWHERE",
+    "error_description": "Une ou plusieurs instructions qui devraient se trouver dans le corps de la boucle sont absentes du code de l'élève. Ces instructions ne sont présentes nulle part dans le programme."
+  },
+  {
+    "error_tag": "LO_CONDITION_ERROR",
+    "error_description": "La condition de la boucle 'tant que' (while) est incorrecte. L'opération de comparaison utilisée dans la condition ne correspond pas à celle attendue dans la solution correcte."
   },
   {
     "error_tag": "LO_FOR_MISPLACED",
     "error_description": "La boucle 'pour' (for) est présente mais placée au mauvais endroit dans le code. Son ordre d'apparition ne correspond pas à la solution attendue."
   },
   {
-    "error_tag": "LO_WHILE_MISPLACED",
-    "error_description": "La boucle 'tant que' (while) est présente mais placée au mauvais endroit dans le code. Son ordre d'apparition ne correspond pas à la solution attendue."
+    "error_tag": "LO_FOR_MISSING",
+    "error_description": "Une boucle 'pour' (for) est absente dans le code de l'élève alors qu'elle est requise par la solution correcte pour répéter un bloc d'instructions un nombre déterminé de fois."
   },
   {
     "error_tag": "LO_FOR_NUMBER_ITERATION_ERROR",
@@ -304,55 +352,35 @@
     "error_description": "Le nombre d'itérations de la boucle 'pour' (for) est presque correct mais légèrement erroné. La valeur diffère de 1 seulement par rapport au nombre d'itérations attendu."
   },
   {
-    "error_tag": "LO_WHILE_NUMBER_ITERATION_ERROR_UNDER2",
-    "error_description": "La condition d'arrêt de la boucle 'tant que' (while) produit un nombre d'itérations presque correct mais légèrement erroné. La valeur de comparaison diffère de 1 seulement par rapport à la valeur attendue."
+    "error_tag": "LO_FOR_UNNECESSARY",
+    "error_description": "Une boucle 'pour' (for) est présente dans le code de l'élève alors qu'elle n'est pas attendue dans la solution correcte."
   },
   {
-    "error_tag": "LO_BODY_MISSING_NOT_PRESENT_ANYWHERE",
-    "error_description": "Une ou plusieurs instructions qui devraient se trouver dans le corps de la boucle sont absentes du code de l'élève. Ces instructions ne sont présentes nulle part dans le programme."
+    "error_tag": "LO_WHILE_MISPLACED",
+    "error_description": "La boucle 'tant que' (while) est présente mais placée au mauvais endroit dans le code. Son ordre d'apparition ne correspond pas à la solution attendue."
   },
   {
-    "error_tag": "LO_BODY_MISPLACED",
-    "error_description": "Une instruction qui devrait se trouver dans le corps de la boucle est présente dans le code mais placée au mauvais endroit (en dehors de la boucle ou dans un mauvais bloc)."
-  },
-  {
-    "error_tag": "LO_BODY_ERROR",
-    "error_description": "Le corps de la boucle contient une erreur : une instruction à l'intérieur de la boucle est incorrecte, manquante ou en trop."
-  },
-  {
-    "error_tag": "LO_CONDITION_ERROR",
-    "error_description": "La condition de la boucle 'tant que' (while) est incorrecte. L'opération de comparaison utilisée dans la condition ne correspond pas à celle attendue dans la solution correcte."
-  },
-  {
-    "error_tag": "WHILE_STOP_CONDITION_ERROR",
-    "error_description": "La condition d'arrêt de la boucle 'tant que' (while) est erronée. L'opérateur de comparaison, la valeur seuil, ou la condition dans son ensemble ne correspond pas à la solution correcte."
+    "error_tag": "LO_WHILE_MISSING",
+    "error_description": "Une boucle 'tant que' (while) est absente dans le code de l'élève alors qu'elle est requise par la solution correcte pour répéter un bloc d'instructions tant qu'une condition est vraie."
   },
   {
     "error_tag": "LO_WHILE_MISSING_UPDATE",
     "error_description": "La variable de condition de la boucle 'tant que' (while) n'est pas mise à jour dans le corps de la boucle. Cela peut entraîner une boucle infinie ou un comportement incorrect."
   },
   {
-    "error_tag": "EXP_ERROR_CONDITIONAL_BRANCH",
-    "error_description": "La condition d'une structure conditionnelle (if) est incorrecte. L'expression de comparaison ou l'opération logique utilisée ne correspond pas à la solution attendue."
+    "error_tag": "LO_WHILE_NUMBER_ITERATION_ERROR_UNDER2",
+    "error_description": "La condition d'arrêt de la boucle 'tant que' (while) produit un nombre d'itérations presque correct mais légèrement erroné. La valeur de comparaison diffère de 1 seulement par rapport à la valeur attendue."
   },
   {
-    "error_tag": "EXP_ERROR_ASSIGNMENT",
-    "error_description": "Une instruction d'affectation (assignation d'une valeur à une variable) contient une erreur. La valeur assignée, la variable cible ou l'expression utilisée est incorrecte."
+    "error_tag": "LO_WHILE_UNNECESSARY",
+    "error_description": "Une boucle 'tant que' (while) est présente dans le code de l'élève alors qu'elle n'est pas attendue dans la solution correcte."
   },
   {
-    "error_tag": "EXP_ERROR_ASSIGNMENT_UNNECESSARY",
-    "error_description": "Une instruction d'affectation est présente dans le code de l'élève mais n'est pas attendue dans la solution correcte. L'assignation est superflue dans ce contexte."
+    "error_tag": "VA_DECLARATION_INITIALIZATION_ERROR",
+    "error_description": "Une variable est déclarée et initialisée avec une valeur incorrecte. La valeur d'initialisation ne correspond pas à celle attendue par la solution correcte."
   },
   {
-    "error_tag": "EXP_ERROR_ASSIGNMENT_MISPLACED",
-    "error_description": "Une instruction d'affectation est présente mais placée au mauvais endroit dans le code. Son ordre d'exécution ne correspond pas à la solution attendue."
-  },
-  {
-    "error_tag": "EXP_ERROR_OPERATION",
-    "error_description": "Une opération arithmétique ou logique est incorrecte. L'expression calculée (par exemple a + b, a * 2) ne correspond pas à l'opération attendue dans la solution correcte."
-  },
-  {
-    "error_tag": "EXP_FUNCTION_RESULT_NOT_ASSIGNED",
-    "error_description": "Une fonction qui retourne une valeur (comme 'lire_nombre', 'lire_chaine', 'mesurer_hauteur' ou 'detecter_obstacle') est appelée mais son résultat n'est pas stocké dans une variable. L'élève a omis d'affecter la valeur retournée."
+    "error_tag": "WHILE_STOP_CONDITION_ERROR",
+    "error_description": "La condition d'arrêt de la boucle 'tant que' (while) est erronée. L'opérateur de comparaison, la valeur seuil, ou la condition dans son ensemble ne correspond pas à la solution correcte."
   }
 ]
