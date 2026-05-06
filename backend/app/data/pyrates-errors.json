@@ -1,13 +1,5 @@
 [
   {
-    "error_tag": "FOR_LOOP_MISSING",
-    "error_description": "Une boucle 'pour' (for) est absente dans le code de l'élève alors qu'elle est attendue dans la solution correcte."
-  },
-  {
-    "error_tag": "FOR_LOOP_BODY_MISMATCH",
-    "error_description": "Le corps de la boucle 'pour' (for) ne correspond pas à la solution attendue : des instructions sont manquantes, incorrectes ou en trop dans le bloc d'itération."
-  },
-  {
     "error_tag": "VA_DECLARATION_INITIALIZATION_ERROR",
     "error_description": "Une variable est déclarée et initialisée avec une valeur incorrecte. La valeur d'initialisation ne correspond pas à celle attendue par la solution correcte."
   },
@@ -310,10 +302,6 @@
   {
     "error_tag": "LO_FOR_NUMBER_ITERATION_ERROR_UNDER2",
     "error_description": "Le nombre d'itérations de la boucle 'pour' (for) est presque correct mais légèrement erroné. La valeur diffère de 1 seulement par rapport au nombre d'itérations attendu."
-  },
-  {
-    "error_tag": "LO_WHILE_NUMBER_ITERATION_ERROR",
-    "error_description": "La condition d'arrêt de la boucle 'tant que' (while) produit un nombre d'itérations incorrect. La valeur de comparaison diffère de plus de 1 par rapport à la valeur attendue."
   },
   {
     "error_tag": "LO_WHILE_NUMBER_ITERATION_ERROR_UNDER2",
