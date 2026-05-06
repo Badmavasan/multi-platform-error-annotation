@@ -37,7 +37,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
+app.mount("/error-annotation/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
 
 app.include_router(auth.router, prefix="/api/v1")
 app.include_router(users.router, prefix="/api/v1")
@@ -60,7 +60,7 @@ async def upload_image(
     dest = os.path.join(UPLOAD_DIR, filename)
     with open(dest, "wb") as f:
         shutil.copyfileobj(file.file, f)
-    return {"url": f"/uploads/{filename}"}
+    return {"url": f"/error-annotation/uploads/{filename}"}
 
 
 @app.get("/api/v1/health")
