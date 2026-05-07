@@ -1,3 +1,5 @@
+import json
+import os
 from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session, joinedload
@@ -11,6 +13,15 @@ from app.schemas import AnnotationSubmit, AnnotationOut, QueueItem, ContextOut
 from app.core.deps import require_annotator
 
 router = APIRouter(prefix="/annotator", tags=["annotator"])
+
+_DESCRIPTIONS_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "platform_descriptions.json")
+
+def _load_platform_descriptions() -> dict:
+    try:
+        with open(_DESCRIPTIONS_PATH, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
 
 
 def _load_assignment(assignment_id: int, annotator_id: int, db: Session) -> Assignment:
@@ -42,12 +53,13 @@ def get_queue(db: Session = Depends(get_db), current_user: User = Depends(requir
         .order_by(Assignment.assigned_at)
         .all()
     )
+    platform_descriptions = _load_platform_descriptions()
     result = []
     for a in assignments:
         ann = a.annotation
         result.append(QueueItem(
             assignment_id=a.id,
-            context=ContextOut.from_orm_with_errors(a.context),
+            context=ContextOut.from_orm_with_errors(a.context, platform_descriptions),
             is_completed=ann is not None,
             annotation=AnnotationOut.from_orm_full(ann) if ann else None,
         ))
@@ -62,9 +74,10 @@ def get_queue_item(
 ):
     a = _load_assignment(assignment_id, current_user.id, db)
     ann = a.annotation
+    platform_descriptions = _load_platform_descriptions()
     return QueueItem(
         assignment_id=a.id,
-        context=ContextOut.from_orm_with_errors(a.context),
+        context=ContextOut.from_orm_with_errors(a.context, platform_descriptions),
         is_completed=ann is not None,
         annotation=AnnotationOut.from_orm_full(ann) if ann else None,
     )

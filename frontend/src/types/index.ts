@@ -18,6 +18,7 @@ export interface Context {
   correct_answer: string
   created_at: string
   errors: PredefinedError[]
+  platform_description?: string | null
 }
 
 export interface ContextListItem {

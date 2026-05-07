@@ -93,12 +93,16 @@ class ContextOut(BaseModel):
     correct_answer: str
     created_at: datetime
     errors: List[PredefinedErrorOut] = []
+    platform_description: Optional[str] = None
 
     class Config:
         from_attributes = True
 
     @classmethod
-    def from_orm_with_errors(cls, ctx):
+    def from_orm_with_errors(cls, ctx, platform_descriptions: dict = None):
+        desc = None
+        if platform_descriptions is not None:
+            desc = platform_descriptions.get(ctx.platform.value)
         return cls(
             id=ctx.id,
             platform=ctx.platform,
@@ -109,6 +113,7 @@ class ContextOut(BaseModel):
             correct_answer=ctx.correct_answer,
             created_at=ctx.created_at,
             errors=[ce.error for ce in ctx.errors],
+            platform_description=desc,
         )
 
 
