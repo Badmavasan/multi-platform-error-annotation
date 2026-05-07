@@ -66,6 +66,8 @@ export const deleteAnnotator = (id: number) => api.delete(`/users/${id}`)
 export const getAssignments = () => api.get<Assignment[]>('/assignments')
 export const createAssignment = (context_id: number, annotator_id: number) =>
   api.post('/assignments', { context_id, annotator_id })
+export const createBulkAssignments = (context_ids: number[], annotator_ids: number[]) =>
+  api.post<{ created: number; skipped: number }>('/assignments/bulk', { context_ids, annotator_ids })
 export const deleteAssignment = (id: number) => api.delete(`/assignments/${id}`)
 
 // ── Admin export ──────────────────────────────────────────────────────────────

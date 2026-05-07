@@ -135,6 +135,16 @@ class AssignmentCreate(BaseModel):
     annotator_id: int
 
 
+class AssignmentBulkCreate(BaseModel):
+    context_ids: List[int]
+    annotator_ids: List[int]
+
+
+class AssignmentBulkResult(BaseModel):
+    created: int
+    skipped: int
+
+
 class AssignmentOut(BaseModel):
     id: int
     context_id: int

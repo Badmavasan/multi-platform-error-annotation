@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session, joinedload
 from typing import List
 from app.database import get_db
 from app.models import Assignment, Context, User, RoleEnum, ContextError
-from app.schemas import AssignmentCreate, AssignmentDetail, ContextOut, UserOut
+from app.schemas import AssignmentCreate, AssignmentBulkCreate, AssignmentBulkResult, AssignmentDetail, ContextOut, UserOut
 from app.core.deps import require_admin
 
 router = APIRouter(prefix="/assignments", tags=["assignments"])
@@ -57,6 +57,43 @@ def create_assignment(body: AssignmentCreate, db: Session = Depends(get_db), _=D
     db.commit()
     db.refresh(assignment)
     return {"id": assignment.id, "context_id": assignment.context_id, "annotator_id": assignment.annotator_id}
+
+
+@router.post("/bulk", response_model=AssignmentBulkResult, status_code=status.HTTP_201_CREATED)
+def create_bulk_assignments(body: AssignmentBulkCreate, db: Session = Depends(get_db), _=Depends(require_admin)):
+    if not body.context_ids or not body.annotator_ids:
+        raise HTTPException(status_code=400, detail="At least one context and one annotator required")
+
+    contexts = db.query(Context).filter(Context.id.in_(body.context_ids)).all()
+    if len(contexts) != len(body.context_ids):
+        raise HTTPException(status_code=404, detail="One or more contexts not found")
+
+    annotators = db.query(User).filter(
+        User.id.in_(body.annotator_ids), User.role == RoleEnum.ANNOTATOR, User.is_active == True
+    ).all()
+    if len(annotators) != len(body.annotator_ids):
+        raise HTTPException(status_code=404, detail="One or more annotators not found")
+
+    existing = {
+        (a.context_id, a.annotator_id)
+        for a in db.query(Assignment).filter(
+            Assignment.context_id.in_(body.context_ids),
+            Assignment.annotator_id.in_(body.annotator_ids),
+        ).all()
+    }
+
+    created = 0
+    skipped = 0
+    for ctx in contexts:
+        for ann in annotators:
+            if (ctx.id, ann.id) in existing:
+                skipped += 1
+            else:
+                db.add(Assignment(context_id=ctx.id, annotator_id=ann.id))
+                created += 1
+
+    db.commit()
+    return AssignmentBulkResult(created=created, skipped=skipped)
 
 
 @router.delete("/{assignment_id}", status_code=status.HTTP_204_NO_CONTENT)
