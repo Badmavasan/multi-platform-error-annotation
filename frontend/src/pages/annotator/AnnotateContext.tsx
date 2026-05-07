@@ -135,9 +135,8 @@ export default function AnnotateContext() {
         <div className="flex gap-3 rounded-xl px-4 py-3 animate-fade-up stagger-1"
           style={{ background: 'rgba(245,158,11,0.10)', border: '1px solid rgba(245,158,11,0.35)' }}>
           <span className="mt-0.5 flex-shrink-0 text-base" style={{ color: '#F59E0B' }}>⚠</span>
-          <p className="text-sm leading-relaxed" style={{ color: '#F59E0B' }}>
-            {ctx.platform_description}
-          </p>
+          <div className="text-sm leading-relaxed platform-desc" style={{ color: '#F59E0B' }}
+            dangerouslySetInnerHTML={{ __html: ctx.platform_description }} />
         </div>
       )}
 

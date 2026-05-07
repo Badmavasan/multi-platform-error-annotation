@@ -66,3 +66,14 @@ html, body {
 pre, code {
   font-family: 'JetBrains Mono', monospace;
 }
+
+/* Platform description HTML content */
+.platform-desc p { margin-bottom: 0.6em; }
+.platform-desc p:last-child { margin-bottom: 0; }
+.platform-desc code {
+  background: rgba(245,158,11,0.15);
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+  font-size: 0.85em;
+}
+.platform-desc strong { font-weight: 700; }
