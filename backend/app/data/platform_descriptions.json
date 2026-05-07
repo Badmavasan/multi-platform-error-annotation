@@ -1,0 +1,85 @@
+{
+  "Algopython": "Description à remplir pour la plateforme Algopython.",
+  "Pyrates": "Description à remplir pour la plateforme Pyrates.",
+  "SPY": " <h1>Présentation de la plateforme SPY</h1>
+
+  <p>
+    La plateforme <strong>SPY</strong> est dédiée à l’apprentissage de la programmation par blocs.
+    Les élèves disposent d’un nombre limité de blocs qu’ils doivent assembler
+    pour résoudre une tâche de programmation.
+  </p>
+
+  <p>
+    Le code soumis par l’apprenant est traduit dans un langage naturel interprétable.
+    Cette représentation utilise :
+  </p>
+
+  <ul>
+    <li><code>{}</code> pour définir le corps d’une instruction ;</li>
+    <li><code>()</code> pour définir ses paramètres ou conditions.</li>
+  </ul>
+
+  <h2>Exemples de structures</h2>
+
+  <ul>
+    <li><code>if (condition) { corps }</code></li>
+    <li><code>repeat (nombre_de_répétitions) { corps }</code></li>
+    <li><code>while (condition) { corps }</code></li>
+  </ul>
+
+  <p>
+    Comme les exercices portent sur le déplacement d’un robot,
+    toutes les instructions sont placées à l’intérieur d’un bloc de la forme :
+  </p>
+
+  <pre><code>&lt;nom_robot&gt; {
+    ...
+}</code></pre>
+
+  <h2>Gestion des robots</h2>
+
+  <p>
+    Dans la solution correcte, ces blocs sont appelés
+    <code>script</code>, <code>script2</code>, etc.
+    En revanche, dans la soumission de l’élève,
+    les noms des robots peuvent être différents et n’ont aucune importance.
+  </p>
+
+  <p>
+    Il est également possible d’avoir plusieurs robots dans une même solution.
+    Par exemple :
+  </p>
+
+  <pre><code>script {
+    ...
+}
+
+script2 {
+    ...
+}</code></pre>
+
+  <p>
+    Même si le nom des robots n’est pas pris en compte,
+    leur ordre est important.
+  </p>
+
+  <p>
+    Ainsi, si la solution correcte correspond à un robot
+    <strong>Bob</strong> suivi d’un robot <strong>Karl</strong>,
+    alors la soumission de l’élève doit respecter ce même ordre :
+  </p>
+
+  <pre><code>bob {
+    ...
+}
+
+karl {
+    ...
+}</code></pre>
+
+  <p>
+    Si l’ordre est inversé, ou si <strong>Bob</strong> réalise les actions prévues
+    pour <strong>Karl</strong> (et inversement),
+    cela est considéré comme une erreur.
+  </p>"
+}
