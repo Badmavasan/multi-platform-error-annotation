@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { ArrowLeft, CheckCircle, Code2, BookOpen, Check, ThumbsUp, ThumbsDown } from 'lucide-react'
+import { ArrowLeft, CheckCircle, Code2, BookOpen, Check, ThumbsUp, ThumbsDown, ChevronDown, X, Search } from 'lucide-react'
 import { getQueueItem, submitAnnotation } from '../../api/client'
-import type { QueueItem } from '../../types'
+import type { PredefinedError, QueueItem } from '../../types'
 import { CodeBlock } from '../../components/CodeBlock'
 
 const PLATFORM_COLORS: Record<string, string> = {
@@ -30,7 +30,11 @@ export default function AnnotateContext() {
   const [errorReviews, setErrorReviews] = useState<Record<number, boolean>>({})
   // yes/no additional errors
   const [hasAdditional, setHasAdditional] = useState<boolean | null>(null)
+  const [selectedAdditionalIds, setSelectedAdditionalIds] = useState<number[]>([])
   const [additionalText, setAdditionalText] = useState('')
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [search, setSearch] = useState('')
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     getQueueItem(id).then(r => {
@@ -42,10 +46,21 @@ export default function AnnotateContext() {
         ann.error_reviews.forEach(r => { reviews[r.error.id] = r.is_agreed })
         setErrorReviews(reviews)
         setHasAdditional(ann.has_additional_errors)
+        setSelectedAdditionalIds(ann.additional_error_ids ?? [])
         setAdditionalText(ann.additional_errors_text ?? '')
       }
     }).finally(() => setLoading(false))
   }, [id])
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [])
 
   const handleSubmit = async () => {
     if (!item) return
@@ -62,8 +77,8 @@ export default function AnnotateContext() {
       return
     }
 
-    if (hasAdditional && !additionalText.trim()) {
-      setSubmitError('Veuillez décrire les erreurs supplémentaires identifiées.')
+    if (hasAdditional && selectedAdditionalIds.length === 0 && !additionalText.trim()) {
+      setSubmitError('Veuillez sélectionner au moins une erreur ou décrire les erreurs supplémentaires.')
       return
     }
 
@@ -73,7 +88,8 @@ export default function AnnotateContext() {
       await submitAnnotation(id, {
         error_reviews: ctx.errors.map(e => ({ error_id: e.id, is_agreed: errorReviews[e.id] })),
         has_additional_errors: hasAdditional,
-        additional_errors_text: hasAdditional ? additionalText.trim() : null,
+        additional_error_ids: hasAdditional ? selectedAdditionalIds : [],
+        additional_errors_text: hasAdditional && additionalText.trim() ? additionalText.trim() : null,
       })
       navigate('/annotator')
     } catch (e: any) {
@@ -97,6 +113,21 @@ export default function AnnotateContext() {
   const platformColor = PLATFORM_TEXT[ctx.platform]
   const platformBg = PLATFORM_COLORS[ctx.platform]
   const isCompleted = item.is_completed
+
+  // Errors available for additional selection: all platform errors excluding those already in the context
+  const contextErrorIds = new Set(ctx.errors.map(e => e.id))
+  const availableErrors: PredefinedError[] = (item.platform_errors ?? []).filter(e => !contextErrorIds.has(e.id))
+  const filteredErrors = availableErrors.filter(e =>
+    e.error_tag.toLowerCase().includes(search.toLowerCase()) ||
+    e.description.toLowerCase().includes(search.toLowerCase())
+  )
+  const selectedErrors = availableErrors.filter(e => selectedAdditionalIds.includes(e.id))
+
+  const toggleError = (id: number) => {
+    setSelectedAdditionalIds(prev =>
+      prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]
+    )
+  }
 
   return (
     <div className="flex flex-col gap-6">
@@ -283,7 +314,7 @@ export default function AnnotateContext() {
                     <ThumbsUp size={13} /> Oui
                   </button>
                   <button
-                    onClick={() => { setHasAdditional(false); setAdditionalText('') }}
+                    onClick={() => { setHasAdditional(false); setSelectedAdditionalIds([]); setAdditionalText('') }}
                     className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-display font-semibold transition-all"
                     style={hasAdditional === false
                       ? { background: 'rgba(239,68,68,0.15)', color: '#EF4444', border: '1px solid rgba(239,68,68,0.4)' }
@@ -295,32 +326,152 @@ export default function AnnotateContext() {
             </div>
 
             {hasAdditional && (
-              <div>
-                <label className="block text-sm font-display font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
-                  Description des erreurs supplémentaires <span style={{ color: '#EF4444' }}>*</span>
-                </label>
-                {isCompleted ? (
-                  <div className="rounded-lg border px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap"
-                    style={{ background: 'var(--bg-elevated)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
-                    {additionalText || '—'}
-                  </div>
-                ) : (
-                  <textarea
-                    value={additionalText}
-                    onChange={e => setAdditionalText(e.target.value)}
-                    rows={4}
-                    placeholder="Décrivez les erreurs supplémentaires que vous avez identifiées…"
-                    className="w-full rounded-lg border px-4 py-3 text-sm leading-relaxed resize-y outline-none transition-colors"
-                    style={{
-                      background: 'var(--bg-elevated)',
-                      borderColor: additionalText.trim() ? 'var(--border-hover)' : 'var(--border)',
-                      color: 'var(--text-primary)',
-                      fontFamily: 'inherit',
-                    }}
-                    onFocus={e => (e.currentTarget.style.borderColor = 'var(--accent)')}
-                    onBlur={e => (e.currentTarget.style.borderColor = additionalText.trim() ? 'var(--border-hover)' : 'var(--border)')}
-                  />
-                )}
+              <div className="flex flex-col gap-4">
+
+                {/* Multi-select dropdown */}
+                <div>
+                  <label className="block text-sm font-display font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
+                    Sélectionner des erreurs existantes
+                  </label>
+
+                  {isCompleted ? (
+                    selectedErrors.length > 0 ? (
+                      <div className="flex flex-wrap gap-2">
+                        {selectedErrors.map(e => (
+                          <span key={e.id} className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-mono font-semibold"
+                            style={{ background: 'rgba(99,102,241,0.12)', color: '#6366F1', border: '1px solid rgba(99,102,241,0.3)' }}>
+                            {e.error_tag}
+                          </span>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Aucune erreur sélectionnée</p>
+                    )
+                  ) : (
+                    <div className="relative" ref={dropdownRef}>
+                      {/* Selected chips */}
+                      {selectedErrors.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 mb-2">
+                          {selectedErrors.map(e => (
+                            <span key={e.id} className="flex items-center gap-1 px-2 py-0.5 rounded text-xs font-mono font-semibold"
+                              style={{ background: 'rgba(99,102,241,0.12)', color: '#6366F1', border: '1px solid rgba(99,102,241,0.3)' }}>
+                              {e.error_tag}
+                              <button onClick={() => toggleError(e.id)} className="ml-0.5 hover:opacity-70">
+                                <X size={10} />
+                              </button>
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Trigger */}
+                      <button
+                        onClick={() => setDropdownOpen(o => !o)}
+                        className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm transition-colors"
+                        style={{
+                          background: 'var(--bg-elevated)',
+                          border: `1px solid ${dropdownOpen ? 'var(--accent)' : 'var(--border)'}`,
+                          color: 'var(--text-secondary)',
+                        }}>
+                        <span>{selectedErrors.length > 0 ? `${selectedErrors.length} sélectionnée(s)` : 'Choisir des erreurs…'}</span>
+                        <ChevronDown size={14} style={{ transform: dropdownOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.15s' }} />
+                      </button>
+
+                      {/* Dropdown panel */}
+                      {dropdownOpen && (
+                        <div className="absolute z-20 mt-1 w-full rounded-lg border overflow-hidden"
+                          style={{ background: 'var(--bg-elevated)', borderColor: 'var(--border)', boxShadow: '0 8px 24px rgba(0,0,0,0.3)' }}>
+                          {/* Search */}
+                          <div className="px-3 py-2 border-b flex items-center gap-2" style={{ borderColor: 'var(--border)', background: 'var(--bg-surface)' }}>
+                            <Search size={13} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
+                            <input
+                              autoFocus
+                              value={search}
+                              onChange={e => setSearch(e.target.value)}
+                              placeholder="Rechercher…"
+                              className="flex-1 text-sm outline-none bg-transparent"
+                              style={{ color: 'var(--text-primary)' }}
+                            />
+                            {search && (
+                              <button onClick={() => setSearch('')} style={{ color: 'var(--text-muted)' }}>
+                                <X size={12} />
+                              </button>
+                            )}
+                          </div>
+                          {/* Options */}
+                          <div style={{ maxHeight: 240, overflowY: 'auto' }}>
+                            {filteredErrors.length === 0 ? (
+                              <p className="px-4 py-3 text-sm" style={{ color: 'var(--text-muted)' }}>Aucun résultat</p>
+                            ) : filteredErrors.map(e => {
+                              const selected = selectedAdditionalIds.includes(e.id)
+                              return (
+                                <button key={e.id} onClick={() => toggleError(e.id)}
+                                  className="w-full text-left px-4 py-2.5 flex items-start gap-3 transition-colors"
+                                  style={{
+                                    background: selected ? 'rgba(99,102,241,0.08)' : 'transparent',
+                                    borderBottom: '1px solid var(--border)',
+                                  }}
+                                  onMouseEnter={ev => { if (!selected) ev.currentTarget.style.background = 'var(--bg-surface)' }}
+                                  onMouseLeave={ev => { ev.currentTarget.style.background = selected ? 'rgba(99,102,241,0.08)' : 'transparent' }}>
+                                  <div className="mt-0.5 flex-shrink-0 w-4 h-4 rounded flex items-center justify-center"
+                                    style={{
+                                      background: selected ? '#6366F1' : 'transparent',
+                                      border: `1.5px solid ${selected ? '#6366F1' : 'var(--border-hover)'}`,
+                                    }}>
+                                    {selected && <Check size={10} color="#fff" strokeWidth={3} />}
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <p className="text-xs font-mono font-bold" style={{ color: selected ? '#6366F1' : 'var(--text-primary)' }}>
+                                      {e.error_tag}
+                                    </p>
+                                    {e.description && (
+                                      <p className="text-xs mt-0.5 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+                                        {e.description}
+                                      </p>
+                                    )}
+                                  </div>
+                                </button>
+                              )
+                            })}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+
+                {/* Optional free text */}
+                <div>
+                  <label className="block text-sm font-display font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
+                    Remarques libres <span className="font-normal text-xs" style={{ color: 'var(--text-muted)' }}>(optionnel)</span>
+                  </label>
+                  {isCompleted ? (
+                    additionalText ? (
+                      <div className="rounded-lg border px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap"
+                        style={{ background: 'var(--bg-elevated)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
+                        {additionalText}
+                      </div>
+                    ) : (
+                      <p className="text-sm" style={{ color: 'var(--text-muted)' }}>—</p>
+                    )
+                  ) : (
+                    <textarea
+                      value={additionalText}
+                      onChange={e => setAdditionalText(e.target.value)}
+                      rows={3}
+                      placeholder="Remarques supplémentaires…"
+                      className="w-full rounded-lg border px-4 py-3 text-sm leading-relaxed resize-y outline-none transition-colors"
+                      style={{
+                        background: 'var(--bg-elevated)',
+                        borderColor: additionalText.trim() ? 'var(--border-hover)' : 'var(--border)',
+                        color: 'var(--text-primary)',
+                        fontFamily: 'inherit',
+                      }}
+                      onFocus={e => (e.currentTarget.style.borderColor = 'var(--accent)')}
+                      onBlur={e => (e.currentTarget.style.borderColor = additionalText.trim() ? 'var(--border-hover)' : 'var(--border)')}
+                    />
+                  )}
+                </div>
               </div>
             )}
           </div>

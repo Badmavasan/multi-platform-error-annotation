@@ -9,7 +9,7 @@ from app.models import (
     Assignment, Context, ContextError, Annotation,
     AnnotationErrorReview, PredefinedError, User
 )
-from app.schemas import AnnotationSubmit, AnnotationOut, QueueItem, ContextOut
+from app.schemas import AnnotationSubmit, AnnotationOut, QueueItem, ContextOut, PredefinedErrorOut
 from app.core.deps import require_annotator
 
 router = APIRouter(prefix="/annotator", tags=["annotator"])
@@ -22,6 +22,16 @@ def _load_platform_descriptions() -> dict:
             return json.load(f)
     except Exception:
         return {}
+
+
+def _platform_errors(platform, db: Session) -> List[PredefinedErrorOut]:
+    rows = (
+        db.query(PredefinedError)
+        .filter(PredefinedError.platform == platform)
+        .order_by(PredefinedError.display_order, PredefinedError.id)
+        .all()
+    )
+    return [PredefinedErrorOut.from_orm(e) for e in rows]
 
 
 def _load_assignment(assignment_id: int, annotator_id: int, db: Session) -> Assignment:
@@ -60,6 +70,7 @@ def get_queue(db: Session = Depends(get_db), current_user: User = Depends(requir
         result.append(QueueItem(
             assignment_id=a.id,
             context=ContextOut.from_orm_with_errors(a.context, platform_descriptions),
+            platform_errors=_platform_errors(a.context.platform, db),
             is_completed=ann is not None,
             annotation=AnnotationOut.from_orm_full(ann) if ann else None,
         ))
@@ -78,6 +89,7 @@ def get_queue_item(
     return QueueItem(
         assignment_id=a.id,
         context=ContextOut.from_orm_with_errors(a.context, platform_descriptions),
+        platform_errors=_platform_errors(a.context.platform, db),
         is_completed=ann is not None,
         annotation=AnnotationOut.from_orm_full(ann) if ann else None,
     )
@@ -92,20 +104,25 @@ def submit_annotation(
 ):
     a = _load_assignment(assignment_id, current_user.id, db)
 
-    if body.has_additional_errors and not (body.additional_errors_text or "").strip():
-        raise HTTPException(status_code=400, detail="Veuillez décrire les erreurs supplémentaires identifiées.")
+    if body.has_additional_errors and not body.additional_error_ids and not (body.additional_errors_text or "").strip():
+        raise HTTPException(status_code=400, detail="Veuillez sélectionner au moins une erreur ou décrire les erreurs supplémentaires.")
+
+    ids_json = json.dumps(body.additional_error_ids) if body.has_additional_errors and body.additional_error_ids else None
+    extra_text = body.additional_errors_text if body.has_additional_errors else None
 
     ann = a.annotation
     if ann:
         ann.submitted_at = datetime.utcnow()
         ann.has_additional_errors = body.has_additional_errors
-        ann.additional_errors_text = body.additional_errors_text if body.has_additional_errors else None
+        ann.additional_error_ids = ids_json
+        ann.additional_errors_text = extra_text
         db.query(AnnotationErrorReview).filter(AnnotationErrorReview.annotation_id == ann.id).delete()
     else:
         ann = Annotation(
             assignment_id=assignment_id,
             has_additional_errors=body.has_additional_errors,
-            additional_errors_text=body.additional_errors_text if body.has_additional_errors else None,
+            additional_error_ids=ids_json,
+            additional_errors_text=extra_text,
         )
         db.add(ann)
         db.flush()

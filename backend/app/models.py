@@ -92,6 +92,7 @@ class Annotation(Base):
     id = Column(Integer, primary_key=True, index=True)
     assignment_id = Column(Integer, ForeignKey("assignments.id"), unique=True, nullable=False)
     has_additional_errors = Column(Boolean, nullable=False, default=False)
+    additional_error_ids = Column(Text, nullable=True)
     additional_errors_text = Column(Text, nullable=True)
     submitted_at = Column(DateTime, default=datetime.utcnow)
 

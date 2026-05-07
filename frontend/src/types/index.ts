@@ -56,6 +56,7 @@ export interface Annotation {
   assignment_id: number
   error_reviews: ErrorReview[]
   has_additional_errors: boolean
+  additional_error_ids: number[]
   additional_errors_text: string | null
   submitted_at: string
 }
@@ -63,6 +64,7 @@ export interface Annotation {
 export interface QueueItem {
   assignment_id: number
   context: Context
+  platform_errors: PredefinedError[]
   is_completed: boolean
   annotation: Annotation | null
 }

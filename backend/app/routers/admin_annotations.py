@@ -1,3 +1,4 @@
+import json
 from fastapi import APIRouter, Depends
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session, joinedload
@@ -5,7 +6,7 @@ from typing import List
 from app.database import get_db
 from app.models import (
     Assignment, Context, ContextError, Annotation,
-    AnnotationErrorReview, User
+    AnnotationErrorReview, PredefinedError, User
 )
 from app.schemas import ContextExport, AssignmentExport, ErrorReviewExport, PredefinedErrorOut
 from app.core.deps import require_admin
@@ -32,6 +33,8 @@ def export_annotations(
         .all()
     )
 
+    all_errors = {e.id: e.error_tag for e in db.query(PredefinedError).all()}
+
     result = []
     for ctx in contexts:
         annotations = []
@@ -39,6 +42,12 @@ def export_annotations(
             ann = a.annotation
             if ann is None:
                 continue
+            ids: List[int] = []
+            if ann.additional_error_ids:
+                try:
+                    ids = json.loads(ann.additional_error_ids)
+                except Exception:
+                    ids = []
             annotations.append(AssignmentExport(
                 assignment_id=a.id,
                 annotator_username=a.annotator.username,
@@ -53,6 +62,8 @@ def export_annotations(
                     for r in ann.error_reviews
                 ],
                 has_additional_errors=ann.has_additional_errors,
+                additional_error_ids=ids,
+                additional_error_tags=[all_errors[i] for i in ids if i in all_errors],
                 additional_errors_text=ann.additional_errors_text,
             ))
 

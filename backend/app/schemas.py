@@ -175,6 +175,7 @@ class ErrorReviewOut(BaseModel):
 class AnnotationSubmit(BaseModel):
     error_reviews: List[ErrorReviewItem] = []
     has_additional_errors: bool = False
+    additional_error_ids: List[int] = []
     additional_errors_text: Optional[str] = None
 
 
@@ -183,6 +184,7 @@ class AnnotationOut(BaseModel):
     assignment_id: int
     error_reviews: List[ErrorReviewOut] = []
     has_additional_errors: bool = False
+    additional_error_ids: List[int] = []
     additional_errors_text: Optional[str] = None
     submitted_at: datetime
 
@@ -191,6 +193,13 @@ class AnnotationOut(BaseModel):
 
     @classmethod
     def from_orm_full(cls, ann):
+        import json
+        ids: List[int] = []
+        if ann.additional_error_ids:
+            try:
+                ids = json.loads(ann.additional_error_ids)
+            except Exception:
+                ids = []
         return cls(
             id=ann.id,
             assignment_id=ann.assignment_id,
@@ -199,6 +208,7 @@ class AnnotationOut(BaseModel):
                 for r in ann.error_reviews
             ],
             has_additional_errors=ann.has_additional_errors,
+            additional_error_ids=ids,
             additional_errors_text=ann.additional_errors_text,
             submitted_at=ann.submitted_at,
         )
@@ -207,6 +217,7 @@ class AnnotationOut(BaseModel):
 class QueueItem(BaseModel):
     assignment_id: int
     context: ContextOut
+    platform_errors: List[PredefinedErrorOut] = []
     is_completed: bool
     annotation: Optional[AnnotationOut] = None
 
@@ -229,6 +240,8 @@ class AssignmentExport(BaseModel):
     submitted_at: datetime
     error_reviews: List[ErrorReviewExport]
     has_additional_errors: bool
+    additional_error_ids: List[int] = []
+    additional_error_tags: List[str] = []
     additional_errors_text: Optional[str]
 
 
