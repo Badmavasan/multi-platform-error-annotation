@@ -202,7 +202,7 @@ export default function AnnotateContext() {
 
         <div className="px-6 py-4 border-b" style={{ borderColor: 'var(--border)' }}>
           <h2 className="font-display font-bold text-base" style={{ color: 'var(--text-primary)' }}>
-            Annotation
+            Informations supplémentaires
           </h2>
           {ctx.description && (
             <p className="mt-2 text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
@@ -238,9 +238,8 @@ export default function AnnotateContext() {
                             {err.error_tag}
                           </p>
                           {err.description && (
-                            <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                              {err.description}
-                            </p>
+                            <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}
+                              dangerouslySetInnerHTML={{ __html: err.description }} />
                           )}
                         </div>
                         <div className="flex gap-2 flex-shrink-0">
@@ -425,9 +424,8 @@ export default function AnnotateContext() {
                                       {e.error_tag}
                                     </p>
                                     {e.description && (
-                                      <p className="text-xs mt-0.5 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                                        {e.description}
-                                      </p>
+                                      <p className="text-xs mt-0.5 leading-relaxed" style={{ color: 'var(--text-muted)' }}
+                                        dangerouslySetInnerHTML={{ __html: e.description }} />
                                     )}
                                   </div>
                                 </button>
