@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { ArrowLeft, CheckCircle, Code2, BookOpen, Check, ThumbsUp, ThumbsDown, ChevronDown, X, Search } from 'lucide-react'
+import { ArrowLeft, CheckCircle, Code2, BookOpen, Check, ThumbsUp, ThumbsDown, ChevronDown, X, Search, Pencil } from 'lucide-react'
 import { getQueueItem, submitAnnotation } from '../../api/client'
 import type { PredefinedError, QueueItem } from '../../types'
 import { CodeBlock } from '../../components/CodeBlock'
@@ -25,6 +25,7 @@ export default function AnnotateContext() {
   const [loading, setLoading] = useState(true)
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState('')
+  const [editing, setEditing] = useState(false)
 
   // error.id → true (oui) | false (non) | undefined (pas encore répondu)
   const [errorReviews, setErrorReviews] = useState<Record<number, boolean>>({})
@@ -36,21 +37,30 @@ export default function AnnotateContext() {
   const [search, setSearch] = useState('')
   const dropdownRef = useRef<HTMLDivElement>(null)
 
+  const loadAnnotationState = (qItem: QueueItem) => {
+    if (qItem.annotation) {
+      const ann = qItem.annotation
+      const reviews: Record<number, boolean> = {}
+      ann.error_reviews.forEach(r => { reviews[r.error.id] = r.is_agreed })
+      setErrorReviews(reviews)
+      setHasAdditional(ann.has_additional_errors)
+      setSelectedAdditionalIds(ann.additional_error_ids ?? [])
+      setAdditionalText(ann.additional_errors_text ?? '')
+    }
+  }
+
   useEffect(() => {
     getQueueItem(id).then(r => {
-      const qItem = r.data
-      setItem(qItem)
-      if (qItem.annotation) {
-        const ann = qItem.annotation
-        const reviews: Record<number, boolean> = {}
-        ann.error_reviews.forEach(r => { reviews[r.error.id] = r.is_agreed })
-        setErrorReviews(reviews)
-        setHasAdditional(ann.has_additional_errors)
-        setSelectedAdditionalIds(ann.additional_error_ids ?? [])
-        setAdditionalText(ann.additional_errors_text ?? '')
-      }
+      setItem(r.data)
+      loadAnnotationState(r.data)
     }).finally(() => setLoading(false))
   }, [id])
+
+  const cancelEditing = () => {
+    if (item) loadAnnotationState(item)
+    setEditing(false)
+    setSubmitError('')
+  }
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -113,6 +123,7 @@ export default function AnnotateContext() {
   const platformColor = PLATFORM_TEXT[ctx.platform]
   const platformBg = PLATFORM_COLORS[ctx.platform]
   const isCompleted = item.is_completed
+  const readOnly = isCompleted && !editing
 
   // Errors available for additional selection: all platform errors excluding those already in the context
   const contextErrorIds = new Set(ctx.errors.map(e => e.id))
@@ -243,7 +254,7 @@ export default function AnnotateContext() {
                           )}
                         </div>
                         <div className="flex gap-2 flex-shrink-0">
-                          {isCompleted ? (
+                          {readOnly ? (
                             answer !== undefined && (
                               <span className="flex items-center gap-1.5 text-sm font-display font-semibold px-3 py-1.5 rounded-lg"
                                 style={answer
@@ -295,7 +306,7 @@ export default function AnnotateContext() {
             </p>
 
             <div className="flex gap-3 mb-4">
-              {isCompleted ? (
+              {readOnly ? (
                 <span className="flex items-center gap-1.5 text-sm font-display font-semibold px-4 py-2 rounded-lg"
                   style={hasAdditional
                     ? { background: 'rgba(16,185,129,0.12)', color: '#10B981', border: '1px solid rgba(16,185,129,0.3)' }
@@ -333,7 +344,7 @@ export default function AnnotateContext() {
                     Sélectionner des erreurs existantes
                   </label>
 
-                  {isCompleted ? (
+                  {readOnly ? (
                     selectedErrors.length > 0 ? (
                       <div className="flex flex-wrap gap-2">
                         {selectedErrors.map(e => (
@@ -443,7 +454,7 @@ export default function AnnotateContext() {
                   <label className="block text-sm font-display font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
                     Remarques libres <span className="font-normal text-xs" style={{ color: 'var(--text-muted)' }}>(optionnel)</span>
                   </label>
-                  {isCompleted ? (
+                  {readOnly ? (
                     additionalText ? (
                       <div className="rounded-lg border px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap"
                         style={{ background: 'var(--bg-elevated)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
@@ -483,17 +494,37 @@ export default function AnnotateContext() {
           )}
 
           {/* Submit / completed */}
-          {!isCompleted ? (
-            <button onClick={handleSubmit} disabled={submitting}
-              className="self-start flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-display font-semibold disabled:opacity-50 transition-all"
-              style={{ background: 'linear-gradient(135deg, #6366F1 0%, #4F46E5 100%)', color: '#fff' }}>
-              <Check size={14} />
-              {submitting ? 'Envoi en cours…' : "Soumettre l'annotation"}
-            </button>
+          {!readOnly ? (
+            <div className="flex items-center gap-3">
+              <button onClick={handleSubmit} disabled={submitting}
+                className="flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-display font-semibold disabled:opacity-50 transition-all"
+                style={{ background: 'linear-gradient(135deg, #6366F1 0%, #4F46E5 100%)', color: '#fff' }}>
+                <Check size={14} />
+                {submitting ? 'Envoi en cours…' : editing ? "Mettre à jour l'annotation" : "Soumettre l'annotation"}
+              </button>
+              {editing && (
+                <button onClick={cancelEditing} disabled={submitting}
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-display font-semibold disabled:opacity-50 transition-all"
+                  style={{ background: 'var(--bg-elevated)', color: 'var(--text-secondary)', border: '1px solid var(--border)' }}>
+                  <X size={14} />
+                  Annuler
+                </button>
+              )}
+            </div>
           ) : (
-            <div className="flex items-center gap-2 text-sm font-display font-medium" style={{ color: '#10B981' }}>
-              <CheckCircle size={16} />
-              Ce contexte a déjà été annoté.
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 text-sm font-display font-medium" style={{ color: '#10B981' }}>
+                <CheckCircle size={16} />
+                Ce contexte a déjà été annoté.
+              </div>
+              <button onClick={() => setEditing(true)}
+                className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-display font-semibold transition-all"
+                style={{ background: 'var(--bg-elevated)', color: 'var(--text-secondary)', border: '1px solid var(--border)' }}
+                onMouseEnter={e => ((e.currentTarget as HTMLElement).style.borderColor = 'var(--border-hover)')}
+                onMouseLeave={e => ((e.currentTarget as HTMLElement).style.borderColor = 'var(--border)')}>
+                <Pencil size={13} />
+                Modifier l'annotation
+              </button>
             </div>
           )}
 
