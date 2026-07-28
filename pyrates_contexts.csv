@@ -1,0 +1,1864 @@
+id,platform,title,description,image_url,student_submission,correct_answer,created_at
+83,PYRATES,[PYRATES][Level1][#010],"Ramasser la clé en enchainant séquentiellement les instructions de déplacements élémentaires.
+
+Parcourir la ligne droite de 16 blocs à l’aide d’une boucle bornée (for) jusqu’au coffre.
+
+Ouvrir le coffre.",/error-annotation/uploads/9d16f56d4b70436580607472df57cf30.png,"# Ecrire le code de son programme ci-dessous
+avancer()
+gauche()
+droite()
+avancer()
+avancer()
+avancer()
+for _ in range(4):
+	sauter()
+	coup()","avancer()
+droite()
+avancer()
+gauche()
+avancer()
+droite()
+for i in range(16):
+    avancer()
+ouvrir()",2026-05-12 23:27:06.348004
+84,PYRATES,[PYRATES][Level1][#011],"Programme
+
+Sauter par-dessus chacun des 6 tonneaux à l’aide d’une boucle bornée (for).
+
+Descendre sur la plateforme inférieure.
+
+Détruire les 9 pots à l’aide d’une boucle bornée (for).
+
+Approcher puis ouvrir le coffre.",/error-annotation/uploads/8e496ebb843e48baa3a3e5aa3b79c893.png,"sauter()
+for i in range(5):
+	avancer()
+	sauter()
+avancer()
+avancer()
+gauche()
+for i in range(13):
+	avancer()
+	avancer()
+	if avancer():
+		coup()","for _ in range(6):
+    sauter()
+    avancer()
+avancer()
+gauche()
+avancer()
+avancer()
+for _ in range(9):
+    coup()
+    avancer()
+avancer()
+ouvrir()",2026-05-13 08:01:40.494841
+85,PYRATES,[PYRATES][Level2][#012],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), droite(), gauche(), sauter(), coup(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/ed20eff508b74d9da9a839486a0c2772.png,"sauter()
+for i in range(5):
+	avancer()
+	sauter()
+avancer()
+avancer()
+gauche()
+for i in range(13):
+	avancer()
+	avancer()
+	if avancer():
+		coup()","for _ in range(6):
+    sauter()
+    avancer()
+avancer()
+gauche()
+avancer()
+avancer()
+for _ in range(9):
+    coup()
+    avancer()
+avancer()
+ouvrir()",2026-05-20 06:22:44.521364
+86,PYRATES,[PYRATES][Level2][#013],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), droite(), gauche(), sauter(), coup(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/db5fa76296c749419d65de219f20055a.png,"for i in range(5):
+	coup()
+	avancer()
+	avancer()
+sauter()
+avancer()
+avancer()
+gauche()
+for i in range(2):
+	avancer()
+	coup()","for _ in range(6):
+    sauter()
+    avancer()
+avancer()
+gauche()
+avancer()
+avancer()
+for _ in range(9):
+    coup()
+    avancer()
+avancer()
+ouvrir()",2026-05-20 06:26:32.415395
+82,PYRATES,[PYRATES][Level1][#009],"Ramasser la clé en enchainant séquentiellement les instructions de déplacements élémentaires.
+
+Parcourir la ligne droite de 16 blocs à l’aide d’une boucle bornée (for) jusqu’au coffre.
+
+Ouvrir le coffre.",/error-annotation/uploads/f70a2f20451a4c17afd41d8942982244.png,"avancer(1)
+gauche (1)
+avancer (6)
+droite (1)
+avancer (7)
+droite (1)
+for _ in range(17):
+	avancer(17)","avancer()
+droite()
+avancer()
+gauche()
+avancer()
+droite()
+for i in range(16):
+    avancer()
+ouvrir()",2026-05-12 23:24:41.92956
+87,PYRATES,[PYRATES][Level2][#014],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), droite(), gauche(), sauter(), coup(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/9a0361cc496845f88d631f4553fa7d9f.png,"for compteur in range(3,7):
+	sauter_hauteur(compteur)
+	avancer()
+while sauter():
+	avancer()","for _ in range(6):
+    sauter()
+    avancer()
+avancer()
+gauche()
+avancer()
+avancer()
+for _ in range(9):
+    coup()
+    avancer()
+avancer()
+ouvrir()",2026-05-20 06:48:49.858708
+88,PYRATES,[PYRATES][Level2][#015],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), droite(), gauche(), sauter(), coup(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/b3693dcca4cd4b3a909ff6274f79ecde.png,"for compteur in range(6):
+	sauter()
+	avancer()
+	
+	gauche()
+for compteur in range(3):
+	tirer(compteur)
+	avancer(12)
+	avancer()
+	casser()
+	ouvrir()","for _ in range(6):
+    sauter()
+    avancer()
+avancer()
+gauche()
+avancer()
+avancer()
+for _ in range(9):
+    coup()
+    avancer()
+avancer()
+ouvrir()",2026-05-20 07:39:20.407497
+74,PYRATES,[PYRATES][Level1][#001],"Ramasser la clé en enchainant séquentiellement les instructions de déplacements élémentaires.
+
+Parcourir la ligne droite de 16 blocs à l’aide d’une boucle bornée (for) jusqu’au coffre.
+
+Ouvrir le coffre.",/error-annotation/uploads/11a9f1366b554f949a16af3038fb11e9.png,"avancer()
+gauche()
+droite()
+avancer()
+avancer()
+avancer()
+for i in range(4):
+    sauter()
+    coup()","avancer()
+droite()
+avancer()
+gauche()
+avancer()
+droite()
+for _ in range(16):
+    avancer()
+ouvrir()",2026-05-12 12:47:47.814947
+75,PYRATES,[PYRATES][Level1][#002],"Ramasser la clé en enchainant séquentiellement les instructions de déplacements élémentaires.
+
+Parcourir la ligne droite de 16 blocs à l’aide d’une boucle bornée (for) jusqu’au coffre.
+
+Ouvrir le coffre.",/error-annotation/uploads/cc5ecfb5368b4ce39492704b097271ab.png,"avancer()
+droite()
+avancer()
+gauche()
+h = 0
+while h < 17:
+	droite()
+	avancer()
+	h = h + 1
+ouvrir()","avancer()
+droite()
+avancer()
+gauche()
+avancer()
+droite()
+for i in range(16):
+    avancer()
+ouvrir()",2026-05-12 22:26:52.435304
+76,PYRATES,[PYRATES][Level1][#003],"Ramasser la clé en enchainant séquentiellement les instructions de déplacements élémentaires.
+
+Parcourir la ligne droite de 16 blocs à l’aide d’une boucle bornée (for) jusqu’au coffre.
+
+Ouvrir le coffre.",/error-annotation/uploads/eb4f6fae052a42eb9cc00eaf10317fa8.png,"avancer()
+droite()
+avancer()
+gauche()
+avancer()
+droite()
+if ouvrir():
+	ouvrir()
+else: 
+	avancer()","avancer()
+droite()
+avancer()
+gauche()
+avancer()
+droite()
+for _ in range(16):
+    avancer()
+ouvrir()",2026-05-12 22:41:35.296337
+77,PYRATES,[PYRATES][Level1][#004],"Ramasser la clé en enchainant séquentiellement les instructions de déplacements élémentaires.
+
+Parcourir la ligne droite de 16 blocs à l’aide d’une boucle bornée (for) jusqu’au coffre.
+
+Ouvrir le coffre.",/error-annotation/uploads/64a1d45dc3dd4ae2975f0eaa97e650eb.png,"avancer()
+avancer()
+for _ in range(4):sauter(1)
+coup(1)","avancer()
+droite()
+avancer()
+gauche()
+avancer()
+droite()
+for _ in range(16):
+    avancer()
+ouvrir()",2026-05-12 23:12:07.15372
+78,PYRATES,[PYRATES][Level1][#005],"Ramasser la clé en enchainant séquentiellement les instructions de déplacements élémentaires.
+
+Parcourir la ligne droite de 16 blocs à l’aide d’une boucle bornée (for) jusqu’au coffre.
+
+Ouvrir le coffre.",/error-annotation/uploads/1d2eb410a71c4d90ba041fe3dfd5a00a.png,"avancer()
+droite()
+avancer()
+droite()
+gauche()
+avancer()
+droite()
+avancer()
+for compteur in range(17):
+	tirer(compteur)","avancer()
+droite()
+avancer()
+gauche()
+avancer()
+droite()
+for _ in range(16):
+    avancer()
+ouvrir()",2026-05-12 23:13:40.914623
+79,PYRATES,[PYRATES][Level1][#006],"Ramasser la clé en enchainant séquentiellement les instructions de déplacements élémentaires.
+
+Parcourir la ligne droite de 16 blocs à l’aide d’une boucle bornée (for) jusqu’au coffre.
+
+Ouvrir le coffre.",/error-annotation/uploads/64a4137534aa41828886fcda87323d95.png,"# Ecrire le code de son programme ci-dessous
+avancer()
+droite()
+avancer()
+gauche()
+avancer()
+gauche()
+droite()
+droite()
+avancer(*6)","avancer()
+droite()
+avancer()
+gauche()
+avancer()
+droite()
+for _ in range(16):
+    avancer()
+ouvrir()",2026-05-12 23:15:52.288886
+80,PYRATES,[PYRATES][Level1][#007],"Ramasser la clé en enchainant séquentiellement les instructions de déplacements élémentaires.
+
+Parcourir la ligne droite de 16 blocs à l’aide d’une boucle bornée (for) jusqu’au coffre.
+
+Ouvrir le coffre.",/error-annotation/uploads/1fbad744d6bf4c23aff155d2a6d1793b.png,"# Ecrire le code de son programme ci-dessous
+avancer()
+droite()
+avancer()
+gauche()
+gauche()
+for _ in range(15):
+	droite()
+	avancer()
+	ouvrir()","avancer()
+droite()
+avancer()
+gauche()
+avancer()
+droite()
+for _ in range(16):
+    avancer()
+ouvrir()",2026-05-12 23:21:18.110517
+81,PYRATES,[PYRATES][Level1][#008],"Ramasser la clé en enchainant séquentiellement les instructions de déplacements élémentaires.
+
+Parcourir la ligne droite de 16 blocs à l’aide d’une boucle bornée (for) jusqu’au coffre.
+
+Ouvrir le coffre.",/error-annotation/uploads/956eebadeeeb4d95bb88e0bef94f0f4d.png,"# Ecrire le code de son programme ci-dessous
+avancer() 
+droite ()
+avancer ()
+gauche ()
+avancer ()
+ma_var = mesurer_hauteur(16)
+if ma_var :
+	avancer ()
+	ouvrir ()","avancer()
+droite()
+avancer()
+gauche()
+avancer()
+droite()
+for _ in range(16):
+    avancer()
+ouvrir()",2026-05-12 23:23:10.474841
+137,PYRATES,[PYRATES][Level6][#063],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 4 lignes.",/error-annotation/uploads/c992e7ee9b9343bab199edfaea3616f6.png,"for _ in range(8):
+	h = 0-5
+	sauter_hauteur(h)
+	ouvrir()","for compteur in range(6):
+    sauter_hauteur(compteur)
+    avancer()
+ouvrir()",2026-05-22 01:58:03.878431
+89,PYRATES,[PYRATES][Level2][#016],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), droite(), gauche(), sauter(), coup(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/6069118fa0634bb19ea0070f61afc45c.png,"for _ in range(10):
+	avancer()
+for _ in range(10):
+	sauter(10)
+	coup(9)","for _ in range(6):
+    sauter()
+    avancer()
+avancer()
+gauche()
+avancer()
+avancer()
+for _ in range(9):
+    coup()
+    avancer()
+avancer()
+ouvrir()",2026-05-20 07:43:33.002847
+90,PYRATES,[PYRATES][Level2][#017],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), droite(), gauche(), sauter(), coup(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/0de2f38d4df74ebda78c07213093791d.png,"coffre=1
+for indice in range(7):
+	sauter()
+	avancer()
+gauche()
+avancer()
+avancer()
+avancer()
+while coffre>1:
+	avancer()
+	coup()","for _ in range(6):
+    sauter()
+    avancer()
+avancer()
+gauche()
+avancer()
+avancer()
+for _ in range(9):
+    coup()
+    avancer()
+avancer()
+ouvrir()",2026-05-20 07:46:15.678696
+91,PYRATES,[PYRATES][Level2][#018],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), droite(), gauche(), sauter(), coup(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/d034b5e87b434084bb3ff92851c8ba29.png,"gauche()
+sauter()
+droite()
+avancer()
+for _ in range(7): 
+	sauter() 
+	avancer()
+for _ in range(15):
+	gauche()
+	avancer()
+	coup()
+	ouvrir()","for _ in range(6):
+    sauter()
+    avancer()
+avancer()
+gauche()
+avancer()
+avancer()
+for _ in range(9):
+    coup()
+    avancer()
+avancer()
+ouvrir()",2026-05-20 07:48:17.6937
+92,PYRATES,[PYRATES][Level2][#019],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), droite(), gauche(), sauter(), coup(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/49cea3e3f3d14846a36af181ddd62d26.png,"for _ in range(6):
+	sauter()
+	avancer()
+avancer()
+gauche()
+for _ in range(2):
+	avancer()
+if ouvrir:
+	coup()
+	avancer()
+else:
+	avancer()","for _ in range(6):
+    sauter()
+    avancer()
+avancer()
+gauche()
+avancer()
+avancer()
+for _ in range(9):
+    coup()
+    avancer()
+avancer()
+ouvrir()",2026-05-20 07:50:18.791448
+93,PYRATES,[PYRATES][Level2][#020],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), droite(), gauche(), sauter(), coup(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/d1830c88b3dc4bb2b7309fdcae8b0c18.png,"for _ in range(6):
+    h = mesurer_hauteur() 
+while h  > 0:
+	sauter()","for _ in range(6):
+    sauter()
+    avancer()
+avancer()
+gauche()
+avancer()
+avancer()
+for _ in range(9):
+    coup()
+    avancer()
+avancer()
+ouvrir()",2026-05-20 07:52:37.201749
+94,PYRATES,[PYRATES][Level2][#021],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), droite(), gauche(), sauter(), coup(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/e9d9d41868b54f92aea1e94be4251656.png,"def sauter_avancer():
+    sauter()
+    avancer()
+for _ in range(6):
+    sauter_avancer()
+avancer()
+gauche()
+def avancer_coup():
+	avancer()
+	coup()
+for _ in range(13):
+	avancer_coup()
+ouvrir()","for _ in range(6):
+    sauter()
+    avancer()
+avancer()
+gauche()
+avancer()
+avancer()
+for _ in range(9):
+    coup()
+    avancer()
+avancer()
+ouvrir()",2026-05-20 07:55:57.638504
+95,PYRATES,[PYRATES][Level2][#022],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), droite(), gauche(), sauter(), coup(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/59a1e2d439004c009f983697de732e1e.png,"def sauter_avancer():
+    sauter()
+    avancer()
+for _ in range(6):
+    sauter_avancer()
+avancer()
+gauche()
+def avancer_coup():
+    avancer()
+    coup()
+for _ in range(13):
+	avancer_coup()
+ouvrir()","def sauter_avancer():
+    sauter()
+    avancer()
+for _ in range(6):
+    sauter_avancer()
+avancer()
+gauche()
+avancer()
+avancer()
+def avancer_coup():
+    coup()
+	avancer()
+for _ in range(9):
+	avancer_coup()
+avancer()
+ouvrir()",2026-05-20 08:20:23.731605
+96,PYRATES,[PYRATES][Level2][#023],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), droite(), gauche(), sauter(), coup(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/1b3e4308cfdf495d862cdb80a440d0ec.png,"for i in range(6):
+    sauter()
+    avancer()
+avancer()
+gauche()
+avancer()
+avancer()
+for i in range(9):
+    coup()
+    avancer()
+avancer()
+ouvrir()","for _ in range(6):
+    sauter()
+    avancer()
+avancer()
+gauche()
+avancer()
+avancer()
+for _ in range(9):
+    coup()
+    avancer()
+avancer()
+ouvrir()",2026-05-20 08:21:55.671996
+97,PYRATES,[PYRATES][Level3][#024],"Objectif : Ramasser la clé puis ouvrir le coffre. La hauteur des piles de caisses est aléatoire et change à chaque exécution. Il faut donc lire le message dans la bouteille avant chaque pile qui indique sa hauteur.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), lire_nombre(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/d143e4996650412f9491863b75cbdc43.png,"sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+avancer()
+lire_nombre()
+avancer()
+h=0
+for cpt in range(4):
+	if h==4:
+		saut_hauteur(4)
+	elif h==0:
+		avancer()","sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+avancer()
+for _ in range(4):
+    message = lire_nombre()
+    avancer()
+    sauter_hauteur(message)
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 09:43:25.265927
+98,PYRATES,[PYRATES][Level3][#025],"Objectif : Ramasser la clé puis ouvrir le coffre. La hauteur des piles de caisses est aléatoire et change à chaque exécution. Il faut donc lire le message dans la bouteille avant chaque pile qui indique sa hauteur.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), lire_nombre(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/056be0abc66a429294820b411fcaecd4.png,"sauter(4)
+avancer()
+sauter(3)
+for _ in range(4):
+	avancer()
+	var = 8
+sauter_hauteur(var)","sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+avancer()
+for _ in range(4):
+    message = lire_nombre()
+    avancer()
+    sauter_hauteur(message)
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 09:47:36.786344
+99,PYRATES,[PYRATES][Level3][#026],"Objectif : Ramasser la clé puis ouvrir le coffre. La hauteur des piles de caisses est aléatoire et change à chaque exécution. Il faut donc lire le message dans la bouteille avant chaque pile qui indique sa hauteur.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), lire_nombre(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/718ed10d92594c238ba4282dee94a646.png,"sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+for _ in range(3):
+	avancer()
+	avancer()
+	message=lire_nombre()
+lire_nombre(1,5)","sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+avancer()
+for _ in range(4):
+    message = lire_nombre()
+    avancer()
+    sauter_hauteur(message)
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 09:54:08.590306
+138,PYRATES,[PYRATES][Level6][#064],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 4 lignes.",/error-annotation/uploads/6d27cca195144bffa66b1bd97303e3bc.png,"for i in range (11):
+	avancer (i+1)
+	sauter_hauteur(i+1)
+ouvrir()","for compteur in range(6):
+    sauter_hauteur(compteur)
+    avancer()
+ouvrir()",2026-05-22 01:59:51.304454
+100,PYRATES,[PYRATES][Level3][#027],"Objectif : Ramasser la clé puis ouvrir le coffre. La hauteur des piles de caisses est aléatoire et change à chaque exécution. Il faut donc lire le message dans la bouteille avant chaque pile qui indique sa hauteur.
+    Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), lire_nombre(), ouvrir()
+    Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/a2470aecd055464aacb3d6ea7759f9c2.png,"sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+for _ in range(3):
+	avancer()
+	lire_nombre()
+	avancer()
+if sauter_hauteur < 6:
+	sauter()
+	lire_nombre()
+	avancer()
+else: 
+	sauter_hauteur(5)","sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+avancer()
+for _ in range(4):
+    message = lire_nombre()
+    avancer()
+    sauter_hauteur(message)
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 10:01:20.554322
+101,PYRATES,[PYRATES][Level3][#028],"Objectif : Ramasser la clé puis ouvrir le coffre. La hauteur des piles de caisses est aléatoire et change à chaque exécution. Il faut donc lire le message dans la bouteille avant chaque pile qui indique sa hauteur.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), lire_nombre(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/da3ce963197849e39f2c9e1138118606.png,"sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+avancer()
+for _ in range(4):
+	if lire_nombre():
+		var = 0
+		var = lire_nombre
+	else:
+		avancer()
+		sauter_hauteur(var)","sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+avancer()
+for _ in range(4):
+    message = lire_nombre()
+    avancer()
+    sauter_hauteur(message)
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 10:03:52.764847
+102,PYRATES,[PYRATES][Level3][#029],"Objectif : Ramasser la clé puis ouvrir le coffre. La hauteur des piles de caisses est aléatoire et change à chaque exécution. Il faut donc lire le message dans la bouteille avant chaque pile qui indique sa hauteur.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), lire_nombre(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/d9c994e681e34ab79a2881eb67d172c1.png,"sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+for _ in range(5):
+	avancer()
+	lire_nombre()
+	avancer() 
+	ma_var = mesurer_hauteur(6)
+if ma_var == 6:
+	sauter_hauteur(3)","sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+avancer()
+for _ in range(4):
+    message = lire_nombre()
+    avancer()
+    sauter_hauteur(message)
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 10:36:25.746725
+103,PYRATES,[PYRATES][Level3][#030],"Objectif : Ramasser la clé puis ouvrir le coffre. La hauteur des piles de caisses est aléatoire et change à chaque exécution. Il faut donc lire le message dans la bouteille avant chaque pile qui indique sa hauteur.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), lire_nombre(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/16e13e816664477b9b7611475fc27b02.png,"sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+for _ in range(2):
+	avancer()
+var = 0
+var = sauter_hauteur()
+avancer()
+sauter_hauteur(2)
+avancer()
+avnacer()
+var = 0
+var = lire_nombre()","sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+avancer()
+for _ in range(4):
+    message = lire_nombre()
+    avancer()
+    sauter_hauteur(message)
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 10:38:49.361183
+107,PYRATES,[PYRATES][Level3][#034],"Objectif : Ramasser la clé puis ouvrir le coffre. La hauteur des piles de caisses est aléatoire et change à chaque exécution. Il faut donc lire le message dans la bouteille avant chaque pile qui indique sa hauteur.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), lire_nombre(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/70989d56e9ee43ec8b537d2cbc387d3e.png,"sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+avancer()
+for _ in range(4):
+    message = lire_nombre()
+    avancer()
+    sauter_hauteur(message)
+    avancer()
+    avancer()
+ouvrir()","sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+avancer()
+for _ in range(4):
+    message = lire_nombre()
+    avancer()
+    sauter_hauteur(message)
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 21:13:26.60453
+108,PYRATES,[PYRATES][Level4][#035],"Objectif : Ramasser la clé puis ouvrir le coffre. L'emplacement du coffre et de la clé sont aléatoires et changent à chaque exécution. Il faut donc lire les messages dans les bouteilles qui indiquent le chemin à suivre (gauche ou droite) à chaque étage. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), lire_chaine(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/e4022e80d3c44d34999e6260a0ca6d1d.png,"avancer()
+message = lire_chaine()
+for _ in range(5):
+	if message == lire_chaine(gauche()) :
+		gauche()
+		avancer()
+		avancer()
+	elif message == lire_chaine(droite()) :
+		droite()
+		avancer()
+		avancer()","avancer()
+for _ in range(5):
+    message = lire_chaine()
+    if message == ""gau"":
+        gauche()
+    else:
+        droite()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 21:29:16.639295
+109,PYRATES,[PYRATES][Level4][#036],"Objectif : Ramasser la clé puis ouvrir le coffre. L'emplacement du coffre et de la clé sont aléatoires et changent à chaque exécution. Il faut donc lire les messages dans les bouteilles qui indiquent le chemin à suivre (gauche ou droite) à chaque étage. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), lire_chaine(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/9388ff60b2634f44ad102822368a962c.png,"avancer()
+for loop in range(5):
+	hauteur = mesurer_hauteur()
+	if hauteur== 0:
+		avancer()
+	elif hauteur == 1:
+		sauter()
+	else:
+		sauter_haut()
+		avancer()
+		avancer()
+ouvrir()","avancer()
+for _ in range(5):
+    message = lire_chaine()
+    if message == ""gau"":
+        gauche()
+    else:
+        droite()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 21:46:25.057712
+110,PYRATES,[PYRATES][Level4][#037],"Objectif : Ramasser la clé puis ouvrir le coffre. L'emplacement du coffre et de la clé sont aléatoires et changent à chaque exécution. Il faut donc lire les messages dans les bouteilles qui indiquent le chemin à suivre (gauche ou droite) à chaque étage. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), lire_chaine(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/bcf89bd95d324326bdedc7c78912d418.png,"for _ in range (4):
+	avancer()
+	message = lire_chaine()
+	var=lire_chaine()
+	droi=droite()
+	gau=gauche()
+	if var == gau :
+		tourner(gau)
+		avancer()
+		avancer()
+	else:
+		tourner(droi)
+		avancer()
+		avancer()","avancer()
+for _ in range(5):
+    message = lire_chaine()
+    if message == ""gau"":
+        gauche()
+    else:
+        droite()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 21:59:32.647062
+139,PYRATES,[PYRATES][Level6][#065],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 4 lignes.",/error-annotation/uploads/ca048b6538be4d619bcebd6f8e0c871f.png,"for i in range(6):
+    sauter_hauteur(i)
+    avancer()
+ouvrir()","for compteur in range(6):
+    sauter_hauteur(compteur)
+    avancer()
+ouvrir()",2026-05-22 02:07:30.043773
+104,PYRATES,[PYRATES][Level3][#031],"Objectif : Ramasser la clé puis ouvrir le coffre. La hauteur des piles de caisses est aléatoire et change à chaque exécution. Il faut donc lire le message dans la bouteille avant chaque pile qui indique sa hauteur.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), lire_nombre(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/6c24fcd08b78424b93bc1e6f562e1e44.png,"sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+for i in range(6):
+	for i in range(2):
+		lire_nombre()
+		avancer()
+	avancer()
+	nbre=lire_nombre()
+	sauter_hauteur(nbre)","sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+avancer()
+for _ in range(4):
+    message = lire_nombre()
+    avancer()
+    sauter_hauteur(message)
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 20:57:40.19395
+105,PYRATES,[PYRATES][Level3][#032],"Objectif : Ramasser la clé puis ouvrir le coffre. La hauteur des piles de caisses est aléatoire et change à chaque exécution. Il faut donc lire le message dans la bouteille avant chaque pile qui indique sa hauteur.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), lire_nombre(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/804645af720249bb9302e533f21cd1cc.png,"for _ in range(1):
+	sauter_hauteur(4)
+	avancer()
+	sauter_hauteur(3)
+avancer()
+avancer()
+lire_nombre()
+ma_variable = 0
+avancer()
+for _ in range(1):
+	ma_variable = 2
+	sauter_hauteur(2)
+avancer(2)","sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+avancer()
+for _ in range(4):
+    message = lire_nombre()
+    avancer()
+    sauter_hauteur(message)
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 21:10:17.403193
+106,PYRATES,[PYRATES][Level3][#033],"Objectif : Ramasser la clé puis ouvrir le coffre. La hauteur des piles de caisses est aléatoire et change à chaque exécution. Il faut donc lire le message dans la bouteille avant chaque pile qui indique sa hauteur.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), lire_nombre(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/b941520b7a204ae3bb6a264a8cbb464d.png,"sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+avancer()
+for _ in range(4):
+    lire_nombre()
+    avancer()
+ouvrir()","sauter_hauteur(4)
+avancer()
+sauter_hauteur(3)
+avancer()
+avancer()
+for _ in range(4):
+    message = lire_nombre()
+    avancer()
+    sauter_hauteur(message)
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 21:12:22.200611
+111,PYRATES,[PYRATES][Level4][#038],"Objectif : Ramasser la clé puis ouvrir le coffre. L'emplacement du coffre et de la clé sont aléatoires et changent à chaque exécution. Il faut donc lire les messages dans les bouteilles qui indiquent le chemin à suivre (gauche ou droite) à chaque étage. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), lire_chaine(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/da87f79420d742e5bf5988ec1187c9bd.png,"avancer()
+sauter_hauteur()
+for _ in range(5):
+	mesuer_hauteur()
+	var = 0
+	var = sauter_haut()
+	var = sauter()
+	avancer()
+	avancer()
+ouvrir()","avancer()
+for _ in range(5):
+    message = lire_chaine()
+    if message == ""gau"":
+        gauche()
+    else:
+        droite()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 22:04:31.641497
+112,PYRATES,[PYRATES][Level4][#039],"Objectif : Ramasser la clé puis ouvrir le coffre. L'emplacement du coffre et de la clé sont aléatoires et changent à chaque exécution. Il faut donc lire les messages dans les bouteilles qui indiquent le chemin à suivre (gauche ou droite) à chaque étage. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), lire_chaine(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/969706d4490e4ebd8367e14d14ccc095.png,"for _ in range(5):
+	avancer()
+	lire_chaine()
+	message = lire_chaine
+	if message == ""gau"":
+		droite()
+		avancer()
+	elif message == ""droi"":
+		gauche()
+		avancer()
+	else:
+		ouvrir()","avancer()
+for _ in range(5):
+    message = lire_chaine()
+    if message == ""gau"":
+        gauche()
+    else:
+        droite()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 22:11:39.294262
+113,PYRATES,[PYRATES][Level4][#040],"Objectif : Ramasser la clé puis ouvrir le coffre. L'emplacement du coffre et de la clé sont aléatoires et changent à chaque exécution. Il faut donc lire les messages dans les bouteilles qui indiquent le chemin à suivre (gauche ou droite) à chaque étage. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), lire_chaine(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/b39f54f770b74a7e8b2355cc10c7016a.png,"avancer()
+lire_chaine()
+for _ in range(3):
+	for _ in range(2):
+		avancer()
+	lire_chaine()","avancer()
+for _ in range(5):
+    message = lire_chaine()
+    if message == ""gau"":
+        gauche()
+    else:
+        droite()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 22:14:44.731108
+114,PYRATES,[PYRATES][Level4][#041],"Objectif : Ramasser la clé puis ouvrir le coffre. L'emplacement du coffre et de la clé sont aléatoires et changent à chaque exécution. Il faut donc lire les messages dans les bouteilles qui indiquent le chemin à suivre (gauche ou droite) à chaque étage. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), lire_chaine(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/756db03819d040cebc7da8768f376e2c.png,"for _ in range(5):
+	avancer()
+	lire_chaine()
+	message = lire_chaine
+	if message == ""gau"":
+		droite()
+		avancer()
+	elif message == ""droi"":
+		gauche()
+		avancer()
+	else:
+		avancer()
+		ouvrir()","avancer()
+for _ in range(5):
+    message = lire_chaine()
+    if message == ""gau"":
+        gauche()
+    else:
+        droite()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 22:23:16.95168
+115,PYRATES,[PYRATES][Level4][#042],"Objectif : Ramasser la clé puis ouvrir le coffre. L'emplacement du coffre et de la clé sont aléatoires et changent à chaque exécution. Il faut donc lire les messages dans les bouteilles qui indiquent le chemin à suivre (gauche ou droite) à chaque étage. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), lire_chaine(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/f3e68b57f3204539bd3b76e787a78998.png,"avancer()
+message=lire_chaine()
+for _ in range(3):
+	if message=='gau':
+		avancer('gau')
+	else:
+		tourner('droi')","avancer()
+for _ in range(5):
+    message = lire_chaine()
+    if message == ""gau"":
+        gauche()
+    else:
+        droite()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 22:26:11.861202
+116,PYRATES,[PYRATES][Level4][#043],"Objectif : Ramasser la clé puis ouvrir le coffre. L'emplacement du coffre et de la clé sont aléatoires et changent à chaque exécution. Il faut donc lire les messages dans les bouteilles qui indiquent le chemin à suivre (gauche ou droite) à chaque étage. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), lire_chaine(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/00fe780863b24667954aef79de1c3088.png,"avancer()
+lire_chaine()
+avancer()
+for _ in range (4):
+	avancer()
+	message = lire_chaine()
+	gauche(message)
+	avancer()
+	droite(message)","avancer()
+for _ in range(5):
+    message = lire_chaine()
+    if message == ""gau"":
+        gauche()
+    else:
+        droite()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 22:29:22.827402
+117,PYRATES,[PYRATES][Level4][#044],"Objectif : Ramasser la clé puis ouvrir le coffre. L'emplacement du coffre et de la clé sont aléatoires et changent à chaque exécution. Il faut donc lire les messages dans les bouteilles qui indiquent le chemin à suivre (gauche ou droite) à chaque étage. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), lire_chaine(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/b234be6f2d2644c794e903234e0c5da2.png,"avancer()
+sauter_haut ()
+for _ in range(1,14):
+	h= mesurer_hauteur()
+	if (h == 0) :
+		avancer()
+	elif (h==1) :
+		sauter()
+	elif (h==2) :
+		sauter_haut()
+avancer()
+sauter_haut()
+ouvrir()","avancer()
+for _ in range(5):
+    message = lire_chaine()
+    if message == ""gau"":
+        gauche()
+    else:
+        droite()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 22:41:03.280828
+118,PYRATES,[PYRATES][Level4][#045],"Objectif : Ramasser la clé puis ouvrir le coffre. L'emplacement du coffre et de la clé sont aléatoires et changent à chaque exécution. Il faut donc lire les messages dans les bouteilles qui indiquent le chemin à suivre (gauche ou droite) à chaque étage. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), lire_chaine(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 14 lignes.",/error-annotation/uploads/ba23d33fe07f4171a8275db19ef04d23.png,"avancer()
+for _ in range(5):
+    message = lire_chaine()
+    if message == ""gau"":
+        gauche()
+    else:
+        droite()
+    avancer()
+    avancer()
+ouvrir()","avancer()
+for _ in range(5):
+    message = lire_chaine()
+    if message == ""gau"":
+        gauche()
+    else:
+        droite()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 22:41:56.88621
+140,PYRATES,[PYRATES][Level6][#066],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 4 lignes.",/error-annotation/uploads/2e987af9d6b84bfca400489cd59c9e31.png,"for compteur in range(6):
+    sauter_hauteur(compteur)
+    avancer()
+ouvrir()","for compteur in range(6):
+    sauter_hauteur(compteur)
+    avancer()
+ouvrir()",2026-05-22 02:08:04.096656
+119,PYRATES,[PYRATES][Level5][#046],"Objectif : Ramasser la clé puis ouvrir le coffre. Sur la plateforme supérieure, la hauteur des caisses est aléatoire et change à chaque exécution. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), sauter(), sauter_haut(), mesurer_hauteur(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 18 lignes.",/error-annotation/uploads/bfaeead6f4554373b16c5b7a0d3d6cb8.png,"avancer()
+for _ in range(5):
+	mesurer_hauteur()
+	if hauteur==1:
+		sauter_haut(1)
+		avancer()
+		avancer()
+	else:
+		sauter_haut(hauteur)
+		avancer()
+		avancer()","avancer()
+sauter_haut()
+for _ in range(5):
+    hauteur = mesurer_hauteur()
+    if hauteur == 0:
+        avancer()
+    elif hauteur == 1:
+        sauter()
+    else:
+        sauter_haut()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 22:45:20.954429
+120,PYRATES,[PYRATES][Level5][#047],"Objectif : Ramasser la clé puis ouvrir le coffre. Sur la plateforme supérieure, la hauteur des caisses est aléatoire et change à chaque exécution. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), sauter(), sauter_haut(), mesurer_hauteur(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 18 lignes.",/error-annotation/uploads/607afc8db00c4961946d5a7496cb1aef.png,"avancer()
+hauteur = mesurer_hauteur()
+for _ in range (8):
+	if hauteur() == 2 :
+		sauter_haut(2)
+	if hauteur() == 1 :
+		sauter_haut(1)","avancer()
+sauter_haut()
+for _ in range(5):
+    hauteur = mesurer_hauteur()
+    if hauteur == 0:
+        avancer()
+    elif hauteur == 1:
+        sauter()
+    else:
+        sauter_haut()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 22:52:47.739744
+121,PYRATES,[PYRATES][Level5][#048],"Objectif : Ramasser la clé puis ouvrir le coffre. Sur la plateforme supérieure, la hauteur des caisses est aléatoire et change à chaque exécution. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), sauter(), sauter_haut(), mesurer_hauteur(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 18 lignes.",/error-annotation/uploads/853ec9024cb64c0395eb26b1c54ffa1b.png,"ma_variable = 0
+for compteur in range(8):
+	if mesurer_hauteur==sauter:
+		avancer();sauter_hauteur(2);
+	else: avancer();sauter_haut();
+	avancer();avancer();sauter();","avancer()
+sauter_haut()
+for _ in range(5):
+    hauteur = mesurer_hauteur()
+    if hauteur == 0:
+        avancer()
+    elif hauteur == 1:
+        sauter()
+    else:
+        sauter_haut()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 23:07:34.185953
+122,PYRATES,[PYRATES][Level5][#049],"Objectif : Ramasser la clé puis ouvrir le coffre. Sur la plateforme supérieure, la hauteur des caisses est aléatoire et change à chaque exécution. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), sauter(), sauter_haut(), mesurer_hauteur(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 18 lignes.",/error-annotation/uploads/f46d2c0737c741af94a490c511959838.png,"avancer()
+sauter_haut()
+for _ in range(5):
+    avancer()
+    message =lire_nombre()
+    avancer()
+    mesurer_hauteur(message)","avancer()
+sauter_haut()
+for _ in range(5):
+    hauteur = mesurer_hauteur()
+    if hauteur == 0:
+        avancer()
+    elif hauteur == 1:
+        sauter()
+    else:
+        sauter_haut()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 23:13:30.345955
+123,PYRATES,[PYRATES][Level5][#050],"Objectif : Ramasser la clé puis ouvrir le coffre. Sur la plateforme supérieure, la hauteur des caisses est aléatoire et change à chaque exécution. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), sauter(), sauter_haut(), mesurer_hauteur(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 18 lignes.",/error-annotation/uploads/5943f2991c1f416fa92cc1abf71ffe74.png,"avancer()
+sauter_haut()
+for _ in range(6):
+	hauteur = mesurer_hauteur
+	if hauteur == 1:
+		sauter(hauteur)
+	elif hauteur == 2: 
+		sauter_haut(hauteur)
+	else:
+		avancer()
+	avancer()
+	avancer()","avancer()
+sauter_haut()
+for _ in range(5):
+    hauteur = mesurer_hauteur()
+    if hauteur == 0:
+        avancer()
+    elif hauteur == 1:
+        sauter()
+    else:
+        sauter_haut()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 23:15:57.862878
+124,PYRATES,[PYRATES][Level5][#051],"Objectif : Ramasser la clé puis ouvrir le coffre. Sur la plateforme supérieure, la hauteur des caisses est aléatoire et change à chaque exécution. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), sauter(), sauter_haut(), mesurer_hauteur(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 18 lignes.",/error-annotation/uploads/4af6a6aa52a04cfbb1fc2a358444c119.png,"avancer()
+sauter_haut()
+for _ in range(5):
+	ma_var = mesurer_hauteur()
+if ma_var == sauter():
+	sauter()
+elif ma_var == sauter_hauteur():
+	sauter_hauteur()
+ma_var = mesurer_hauteur()
+if ma_var == 5:
+	tourner()
+elif ma_var == 7:
+	avancer()
+	sauter()
+else:
+	avancer()
+avancer()
+avancer()","avancer()
+sauter_haut()
+for _ in range(5):
+    hauteur = mesurer_hauteur()
+    if hauteur == 0:
+        avancer()
+    elif hauteur == 1:
+        sauter()
+    else:
+        sauter_haut()
+    avancer()
+    avancer()
+ouvrir()",2026-05-20 23:49:11.980924
+125,PYRATES,[PYRATES][Level5][#052],"Objectif : Ramasser la clé puis ouvrir le coffre. Sur la plateforme supérieure, la hauteur des caisses est aléatoire et change à chaque exécution. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), sauter(), sauter_haut(), mesurer_hauteur(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 18 lignes.",/error-annotation/uploads/609094c173fc40b19cf832c296d877bf.png,"avancer()
+sauter_haut()
+hauteur = mesurer_hauteur()
+for _ in range(5):
+	if mesurer_hauteur()>0:
+		sauter_haut()
+		avancer(); avancer()
+	else:
+		avancer(); avancer(); avancer()","avancer()
+sauter_haut()
+for _ in range(5):
+    hauteur = mesurer_hauteur()
+    if hauteur == 0:
+        avancer()
+    elif hauteur == 1:
+        sauter()
+    else:
+        sauter_haut()
+    avancer()
+    avancer()
+ouvrir()",2026-05-21 09:29:55.54707
+126,PYRATES,[PYRATES][Level5][#053],"Objectif : Ramasser la clé puis ouvrir le coffre. Sur la plateforme supérieure, la hauteur des caisses est aléatoire et change à chaque exécution. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), sauter(), sauter_haut(), mesurer_hauteur(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 18 lignes.",/error-annotation/uploads/2c5c1cb35b4344bd9ac6596342ff545f.png,"avancer()
+sauter_haut()
+for _ in range(4):
+	mesurer_hauteur()
+	k=1
+	f=2
+	t=mesurer_hauteur
+	if t==k:
+		sauter()
+	if t==f:
+		sauter_haut()
+	else:
+		avancer()","avancer()
+sauter_haut()
+for _ in range(5):
+    hauteur = mesurer_hauteur()
+    if hauteur == 0:
+        avancer()
+    elif hauteur == 1:
+        sauter()
+    else:
+        sauter_haut()
+    avancer()
+    avancer()
+ouvrir()",2026-05-21 09:43:41.975185
+127,PYRATES,[PYRATES][Level5][#054],"Objectif : Ramasser la clé puis ouvrir le coffre. Sur la plateforme supérieure, la hauteur des caisses est aléatoire et change à chaque exécution. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), sauter(), sauter_haut(), mesurer_hauteur(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 18 lignes.",/error-annotation/uploads/f4ca84412c7642fe8d8e91d177c295b5.png,"avancer()
+sauter_haut()
+hauteur = mesurer_hauteur()
+avancer()
+for _ in range(5):
+	lire_chaine()
+	var = lire_chaine()
+	if var == 0:
+		droite()
+		avancer()
+		avancer()
+	else :
+		gauche()
+		avancer()
+		avancer()
+ouvrir()","avancer()
+sauter_haut()
+for _ in range(5):
+    hauteur = mesurer_hauteur()
+    if hauteur == 0:
+        avancer()
+    elif hauteur == 1:
+        sauter()
+    else:
+        sauter_haut()
+    avancer()
+    avancer()
+ouvrir()",2026-05-21 09:47:13.935179
+128,PYRATES,[PYRATES][Level5][#055],"Objectif : Ramasser la clé puis ouvrir le coffre. Sur la plateforme supérieure, la hauteur des caisses est aléatoire et change à chaque exécution. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), sauter(), sauter_haut(), mesurer_hauteur(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 18 lignes.",/error-annotation/uploads/686ce1756dde46daa9347fce804d6e60.png,"avancer()
+sauter_haut()
+for _ in range(5):
+    hauteur = mesurer_hauteur()
+    if hauteur == 0:
+        avancer()
+    elif hauteur == 1:
+        sauter()
+    else:
+        sauter_haut()
+    avancer()
+    avancer()
+ouvrir()","avancer()
+sauter_haut()
+for _ in range(5):
+    hauteur = mesurer_hauteur()
+    if hauteur == 0:
+        avancer()
+    elif hauteur == 1:
+        sauter()
+    else:
+        sauter_haut()
+    avancer()
+    avancer()
+ouvrir()",2026-05-21 09:48:06.321915
+135,PYRATES,[PYRATES][Level6][#061],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 4 lignes.",/error-annotation/uploads/823ef5ea92e64e478b1439250f0f85ed.png,"for k in range(6):
+	coup(k+2)
+	avancer()
+	sauter_hauteur(k)","for compteur in range(6):
+    sauter_hauteur(compteur)
+    avancer()
+ouvrir()",2026-05-22 01:47:35.003414
+130,PYRATES,[PYRATES][Level5][#056],"Objectif : Ramasser la clé puis ouvrir le coffre. Sur la plateforme supérieure, la hauteur des caisses est aléatoire et change à chaque exécution. Le fait de tomber dans les piques fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), sauter(), sauter_haut(), mesurer_hauteur(), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 18 lignes.",/error-annotation/uploads/754b4a34be3149c38c33d37656b1c2ad.png,"for _ in range(5):
+    hauteur = mesurer_hauteur()
+ouvrir()","avancer()
+sauter_haut()
+for _ in range(5):
+    hauteur = mesurer_hauteur()
+    if hauteur == 0:
+        avancer()
+    elif hauteur == 1:
+        sauter()
+    else:
+        sauter_haut()
+    avancer()
+    avancer()
+ouvrir()",2026-05-22 00:54:50.19659
+131,PYRATES,[PYRATES][Level6][#058],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 4 lignes.",/error-annotation/uploads/ff78ad27b56e4f85b31fe71d3901d5cd.png,"for i in range(2):
+	tirer(i+3)
+	tourner()
+tirer(3)","for compteur in range(6):
+    sauter_hauteur(compteur)
+    avancer()
+ouvrir()",2026-05-22 01:00:43.083092
+129,PYRATES,[PYRATES][Level6][#057],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 4 lignes.",/error-annotation/uploads/6ed907d2d14e43aaa23877c79b8295b7.png,"for i in range(7):
+	tirer(i+2),
+	tourner()
+tirer(3)","for compteur in range(6):
+    sauter_hauteur(compteur)
+    avancer()
+ouvrir()",2026-05-21 09:59:25.45457
+132,PYRATES,[PYRATES][Level6][#059],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 4 lignes.",/error-annotation/uploads/fd0defc066ff4be8b19950d7f1552201.png,"for i in range(7):
+	tirer (i + 2 )
+tourner()
+tirer(3)","for compteur in range(6):
+    sauter_hauteur(compteur)
+    avancer()
+ouvrir()",2026-05-22 01:03:32.241318
+133,PYRATES,[PYRATES][Level6][#059],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 4 lignes.",/error-annotation/uploads/004fd1a116be4b868c4d0492691b69fc.png,"i = 0
+for i in range(6):
+	sauter_hauteur(avancer(), i + 1, avancer(), ouvrir())","for compteur in range(6):
+    sauter_hauteur(compteur)
+    avancer()
+ouvrir()",2026-05-22 01:34:28.204443
+134,PYRATES,[PYRATES][Level6][#060],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 4 lignes.",/error-annotation/uploads/bd56fa7237bf44fc8ffbf3f42a84b1d4.png,"a = 0
+for _ in range(6):
+	 mesurer_hauteur(a+1)
+ouvrir()","for compteur in range(6):
+    sauter_hauteur(compteur)
+    avancer()
+ouvrir()",2026-05-22 01:38:15.599653
+136,PYRATES,[PYRATES][Level6][#062],"Objectif : Ramasser la clé puis ouvrir le coffre.
+Fonctions de contrôle : avancer(), sauter_hauteur(hauteur), ouvrir()
+Contraintes : Le programme ne doit pas dépasser 4 lignes.",/error-annotation/uploads/22a07bdea6964236aaa64b2b4cdd43b1.png,"for _ in range(8):
+	h = 0-5
+	sauter_hauteur(h)
+	ouvrir()","for compteur in range(6):
+    sauter_hauteur(compteur)
+    avancer()
+ouvrir()",2026-05-22 01:50:10.383767
+141,PYRATES,[PYRATES][Level7][#067],"Objectif : Tirer sur toutes les noix de coco puis sur le coffre sans jamais atteindre l'autre pirate. Les noix de coco apparaissent par séries alternativement à droite puis à gauche, leur nombre augmente à chaque fois. L’autre pirate se place toujours derrière la dernière. Le fait de tirer sur ce pirate fait perdre puis recommencer le niveau.
+Fonctions de contrôle : tourner(), tirer(distance)
+Contraintes : Le programme ne doit pas dépasser 5 lignes.",/error-annotation/uploads/e085361d9c9046e786e6a3b1902727e6.png,"for compteur in range(7):
+	compteur=compteur+2
+	tirer(compteur)
+ouvrir()","for compteur in range(2,9):
+    tirer(compteur)
+    tourner()
+tirer(3)",2026-05-22 02:16:38.142148
+142,PYRATES,[PYRATES][Level7][#068],"Objectif : Tirer sur toutes les noix de coco puis sur le coffre sans jamais atteindre l'autre pirate. Les noix de coco apparaissent par séries alternativement à droite puis à gauche, leur nombre augmente à chaque fois. L’autre pirate se place toujours derrière la dernière. Le fait de tirer sur ce pirate fait perdre puis recommencer le niveau.
+Fonctions de contrôle : tourner(), tirer(distance)
+Contraintes : Le programme ne doit pas dépasser 5 lignes.",/error-annotation/uploads/590b0792b258406e8eae7e6829735801.png,"for _ in range(20):
+	obstacle=detecter_obstacle()","for compteur in range(2,9):
+    tirer(compteur)
+    tourner()
+tirer(3)",2026-05-22 02:19:59.047231
+143,PYRATES,[PYRATES][Level7][#069],"Objectif : Tirer sur toutes les noix de coco puis sur le coffre sans jamais atteindre l'autre pirate. Les noix de coco apparaissent par séries alternativement à droite puis à gauche, leur nombre augmente à chaque fois. L’autre pirate se place toujours derrière la dernière. Le fait de tirer sur ce pirate fait perdre puis recommencer le niveau.
+Fonctions de contrôle : tourner(), tirer(distance)
+Contraintes : Le programme ne doit pas dépasser 5 lignes.",/error-annotation/uploads/9c18500348b947ca8429ea023aad4b2b.png,"for BLOC in range(1,9):
+	tourner()
+	tirer(BLOC)
+tourner()
+ouvrir()","for compteur in range(2,9):
+    tirer(compteur)
+    tourner()
+tirer(3)",2026-05-22 02:21:44.827458
+144,PYRATES,[PYRATES][Level7][#070],"Objectif : Tirer sur toutes les noix de coco puis sur le coffre sans jamais atteindre l'autre pirate. Les noix de coco apparaissent par séries alternativement à droite puis à gauche, leur nombre augmente à chaque fois. L’autre pirate se place toujours derrière la dernière. Le fait de tirer sur ce pirate fait perdre puis recommencer le niveau.
+Fonctions de contrôle : tourner(), tirer(distance)
+Contraintes : Le programme ne doit pas dépasser 5 lignes.",/error-annotation/uploads/dda5b83f806d4f5083ebc4dce674f194.png,"for compteur in range(5):
+	tourner(compteur)
+	tirer(compteur)
+ouvrir()","for compteur in range(2,9):
+    tirer(compteur)
+    tourner()
+tirer(3)",2026-05-22 02:23:16.828782
+145,PYRATES,[PYRATES][Level7][#071],"Objectif : Tirer sur toutes les noix de coco puis sur le coffre sans jamais atteindre l'autre pirate. Les noix de coco apparaissent par séries alternativement à droite puis à gauche, leur nombre augmente à chaque fois. L’autre pirate se place toujours derrière la dernière. Le fait de tirer sur ce pirate fait perdre puis recommencer le niveau.
+Fonctions de contrôle : tourner(), tirer(distance)
+Contraintes : Le programme ne doit pas dépasser 5 lignes.",/error-annotation/uploads/530f62cff0864a86aefff28b47895aee.png,"for compteur in range(7):
+	compteur=compteur+é
+	tirer(compteur)
+ouvrir()","for compteur in range(2,9):
+    tirer(compteur)
+    tourner()
+tirer(3)",2026-05-22 02:24:52.894247
+146,PYRATES,[PYRATES][Level7][#072],"Objectif : Tirer sur toutes les noix de coco puis sur le coffre sans jamais atteindre l'autre pirate. Les noix de coco apparaissent par séries alternativement à droite puis à gauche, leur nombre augmente à chaque fois. L’autre pirate se place toujours derrière la dernière. Le fait de tirer sur ce pirate fait perdre puis recommencer le niveau.
+Fonctions de contrôle : tourner(), tirer(distance)
+Contraintes : Le programme ne doit pas dépasser 5 lignes.",/error-annotation/uploads/02b98b600277483da68c433febd48856.png,"distance='A'
+for _ in range(10):
+	tirer(2)
+tourner(tirer(8))","for compteur in range(2,9):
+    tirer(compteur)
+    tourner()
+tirer(3)",2026-05-22 02:26:18.906796
+147,PYRATES,[PYRATES][Level7][#073],"Objectif : Tirer sur toutes les noix de coco puis sur le coffre sans jamais atteindre l'autre pirate. Les noix de coco apparaissent par séries alternativement à droite puis à gauche, leur nombre augmente à chaque fois. L’autre pirate se place toujours derrière la dernière. Le fait de tirer sur ce pirate fait perdre puis recommencer le niveau.
+Fonctions de contrôle : tourner(), tirer(distance)
+Contraintes : Le programme ne doit pas dépasser 5 lignes.",/error-annotation/uploads/a6786f00d2a94485aad0cb0d37158a01.png,"for I in range(2) :
+	tourner(I), tirer(3)
+ouvrir()","for compteur in range(2,9):
+    tirer(compteur)
+    tourner()
+tirer(3)",2026-05-22 02:27:48.299939
+148,PYRATES,[PYRATES][Level7][#074],"Objectif : Tirer sur toutes les noix de coco puis sur le coffre sans jamais atteindre l'autre pirate. Les noix de coco apparaissent par séries alternativement à droite puis à gauche, leur nombre augmente à chaque fois. L’autre pirate se place toujours derrière la dernière. Le fait de tirer sur ce pirate fait perdre puis recommencer le niveau.
+Fonctions de contrôle : tourner(), tirer(distance)
+Contraintes : Le programme ne doit pas dépasser 5 lignes.",/error-annotation/uploads/6798ce0917544267a8db0a7d8ca8308b.png,"for i in range (4):
+    tirer(2)
+tourner(3)
+tourner()
+tirer(5)","for compteur in range(2,9):
+    tirer(compteur)
+    tourner()
+tirer(3)",2026-05-22 02:29:11.323844
+149,PYRATES,[PYRATES][Level7][#075],"Objectif : Tirer sur toutes les noix de coco puis sur le coffre sans jamais atteindre l'autre pirate. Les noix de coco apparaissent par séries alternativement à droite puis à gauche, leur nombre augmente à chaque fois. L’autre pirate se place toujours derrière la dernière. Le fait de tirer sur ce pirate fait perdre puis recommencer le niveau.
+Fonctions de contrôle : tourner(), tirer(distance)
+Contraintes : Le programme ne doit pas dépasser 5 lignes.",/error-annotation/uploads/1fd1a171fc2a4b7aadcf8035aa8df5d2.png,"for i in range(8) :
+	tourner()
+	i= i +1
+	tirer(i)
+tirer(3)","for compteur in range(2,9):
+    tirer(compteur)
+    tourner()
+tirer(3)",2026-05-22 02:30:53.31541
+150,PYRATES,[PYRATES][Level7][#076],"Objectif : Tirer sur toutes les noix de coco puis sur le coffre sans jamais atteindre l'autre pirate. Les noix de coco apparaissent par séries alternativement à droite puis à gauche, leur nombre augmente à chaque fois. L’autre pirate se place toujours derrière la dernière. Le fait de tirer sur ce pirate fait perdre puis recommencer le niveau.
+Fonctions de contrôle : tourner(), tirer(distance)
+Contraintes : Le programme ne doit pas dépasser 5 lignes.",/error-annotation/uploads/c2ab992a07454bd8abdc455fcd093190.png,"for i in range (6):
+	sauter_hauteur(i)
+	avancer(i)
+ouvrir()","for compteur in range(2,9):
+    tirer(compteur)
+    tourner()
+tirer(3)",2026-05-22 02:32:24.80908
+151,PYRATES,[PYRATES][Level7][#077],"Objectif : Tirer sur toutes les noix de coco puis sur le coffre sans jamais atteindre l'autre pirate. Les noix de coco apparaissent par séries alternativement à droite puis à gauche, leur nombre augmente à chaque fois. L’autre pirate se place toujours derrière la dernière. Le fait de tirer sur ce pirate fait perdre puis recommencer le niveau.
+Fonctions de contrôle : tourner(), tirer(distance)
+Contraintes : Le programme ne doit pas dépasser 5 lignes.",/error-annotation/uploads/e3a76a44636146ec98d3b0e745fe24d4.png,"for i in range(2,9):
+    tirer(i)
+    tourner()
+tirer(3)","for compteur in range(2,9):
+    tirer(compteur)
+    tourner()
+tirer(3)",2026-05-22 02:32:57.055164
+152,PYRATES,[PYRATES][Level8][#078],"Objectif : Ramasser la clé puis ouvrir le coffre. La solidité du tonneau (nombre dans le cercle), le nombre de pots ainsi que l'emplacement du coffre sont aléatoires et changent à chaque exécution. Un fois le tonneau détruit, de la dynamite apparait à sa place. Il ne faut pas donner de coup dans cette dynamite sous peine d’une explosion qui fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), coup(), detecter_obstacle(), ouvrir()
+Contraintes : Aucunes",/error-annotation/uploads/619546e3868a4e6eada8573eb732a03e.png,"avancer()
+h = coup() 
+while h  > 4:
+	sauter()
+	h = mesurer_hauteur()
+droite()
+for _ in range(5):
+	avancer()
+for _ in range(11):
+	if detecter_obstacle() == True:
+		coup()
+		avancer()
+	else:
+		ouvrir()","avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    obstacle = detecter_obstacle()
+for _ in range(3):
+    avancer()
+droite()
+for _ in range(5):
+    avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    avancer()
+    obstacle = detecter_obstacle()
+ouvrir()",2026-05-22 02:40:03.094805
+153,PYRATES,[PYRATES][Level8][#079],"Objectif : Ramasser la clé puis ouvrir le coffre. La solidité du tonneau (nombre dans le cercle), le nombre de pots ainsi que l'emplacement du coffre sont aléatoires et changent à chaque exécution. Un fois le tonneau détruit, de la dynamite apparait à sa place. Il ne faut pas donner de coup dans cette dynamite sous peine d’une explosion qui fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), coup(), detecter_obstacle(), ouvrir()
+Contraintes : Aucunes",/error-annotation/uploads/01c2acec326749f0b63af3615fabde1b.png,"avancer()
+obstacle = detecter_obstacle()
+
+for _ in range(1):
+	while obstacle == True:
+		coup()
+		if detecter_obstacle() == False:
+			avancer()
+			for _ in range(2):
+				avancer()
+			droite()
+			obstacle = detecter_obstacle()
+			while obstacle == False: 
+				detecter_obstacle()
+				if obstacle == False:
+					detecter_obstacle()
+					avancer()
+				else: 
+					while obstacle == True:
+						coup()
+						avancer()","avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    obstacle = detecter_obstacle()
+for _ in range(3):
+    avancer()
+droite()
+for _ in range(5):
+    avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    avancer()
+    obstacle = detecter_obstacle()
+ouvrir()",2026-05-22 02:48:03.852056
+154,PYRATES,[PYRATES][Level8][#080],"Objectif : Ramasser la clé puis ouvrir le coffre. La solidité du tonneau (nombre dans le cercle), le nombre de pots ainsi que l'emplacement du coffre sont aléatoires et changent à chaque exécution. Un fois le tonneau détruit, de la dynamite apparait à sa place. Il ne faut pas donner de coup dans cette dynamite sous peine d’une explosion qui fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), coup(), detecter_obstacle(), ouvrir()
+Contraintes : Aucunes",/error-annotation/uploads/eb8c30bc24304efbaf575c5ce60df418.png,"avancer()
+h = coup() 
+while h  > 4:
+	sauter()
+	h = coup()
+droite()
+for _ in range(5):
+	avancer()
+for _ in range(11):
+	if detecter_obstacle() == True:
+		coup()
+		avancer()
+	else:
+		ouvrir()","avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    obstacle = detecter_obstacle()
+for _ in range(3):
+    avancer()
+droite()
+for _ in range(5):
+    avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    avancer()
+    obstacle = detecter_obstacle()
+ouvrir()",2026-05-22 02:52:50.160797
+155,PYRATES,[PYRATES][Level8][#081],"Objectif : Ramasser la clé puis ouvrir le coffre. La solidité du tonneau (nombre dans le cercle), le nombre de pots ainsi que l'emplacement du coffre sont aléatoires et changent à chaque exécution. Un fois le tonneau détruit, de la dynamite apparait à sa place. Il ne faut pas donner de coup dans cette dynamite sous peine d’une explosion qui fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), coup(), detecter_obstacle(), ouvrir()
+Contraintes : Aucunes",/error-annotation/uploads/a71acf8014d64f52bd83e0b473fe3802.png,"avancer()
+obstacle= detecter_obstacle()
+while obstacle>=0:
+	coup()
+	obstacle-=1
+for _ in range(20):
+	if obstacle==""True"":
+		avancer()
+		avancer()
+		gauche()
+	else:
+		coup()","avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    obstacle = detecter_obstacle()
+for _ in range(3):
+    avancer()
+droite()
+for _ in range(5):
+    avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    avancer()
+    obstacle = detecter_obstacle()
+ouvrir()",2026-05-22 02:55:25.426672
+156,PYRATES,[PYRATES][Level8][#082],"Objectif : Ramasser la clé puis ouvrir le coffre. La solidité du tonneau (nombre dans le cercle), le nombre de pots ainsi que l'emplacement du coffre sont aléatoires et changent à chaque exécution. Un fois le tonneau détruit, de la dynamite apparait à sa place. Il ne faut pas donner de coup dans cette dynamite sous peine d’une explosion qui fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), coup(), detecter_obstacle(), ouvrir()
+Contraintes : Aucunes",/error-annotation/uploads/d686761978544944ad2e397fd27e7894.png,"avancer()
+obstacle = detecter_obstacle()
+
+for _ in range(1):
+	while obstacle == True:
+		coup()
+		if detecter_obstacle() == False:
+			avancer()
+			for _ in range(2):
+				avancer()
+			droite()
+			obstacle = detecter_obstacle()
+			while obstacle == False: 
+				if obstacle == False:
+					detecter_obstacle()
+					avancer()
+				else: 
+					while obstacle == True:
+						coup()
+						avancer()","avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    obstacle = detecter_obstacle()
+for _ in range(3):
+    avancer()
+droite()
+for _ in range(5):
+    avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    avancer()
+    obstacle = detecter_obstacle()
+ouvrir()",2026-05-22 02:58:40.180897
+157,PYRATES,[PYRATES][Level8][#083],"Objectif : Ramasser la clé puis ouvrir le coffre. La solidité du tonneau (nombre dans le cercle), le nombre de pots ainsi que l'emplacement du coffre sont aléatoires et changent à chaque exécution. Un fois le tonneau détruit, de la dynamite apparait à sa place. Il ne faut pas donner de coup dans cette dynamite sous peine d’une explosion qui fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), coup(), detecter_obstacle(), ouvrir()
+Contraintes : Aucunes",/error-annotation/uploads/737e8554cea743228a21ec76e2aa8b5e.png,"avancer()
+retour = ""menu""
+""menu""
+while ouvrir :
+	obstacle = detecter_obstacle()
+	if obstacle == True :
+		coup()
+	elif obstacle == False :
+		ma_var = 3
+		for _ in range(ma_var):
+			avancer()
+		droite()
+		ma_var = 5
+		for _ in range(ma_var):
+			avancer()
+	ma_var = 1
+	for _ in range(ma_var):
+		avancer()","avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    obstacle = detecter_obstacle()
+for _ in range(3):
+    avancer()
+droite()
+for _ in range(5):
+    avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    avancer()
+    obstacle = detecter_obstacle()
+ouvrir()",2026-05-22 03:12:07.002551
+158,PYRATES,[PYRATES][Level8][#084],"Objectif : Ramasser la clé puis ouvrir le coffre. La solidité du tonneau (nombre dans le cercle), le nombre de pots ainsi que l'emplacement du coffre sont aléatoires et changent à chaque exécution. Un fois le tonneau détruit, de la dynamite apparait à sa place. Il ne faut pas donner de coup dans cette dynamite sous peine d’une explosion qui fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), coup(), detecter_obstacle(), ouvrir()
+Contraintes : Aucunes",/error-annotation/uploads/5b7f05ed61ff41e6809116a47b23adb2.png,"avancer()
+obstacle=detecter_obstacle()
+while obstacle > 0:
+	obstacle=detecter_obstacle()
+	if obstacle == False:
+		avancer()
+	if obstacle == True:
+		coup()
+for _ in range(2):
+	avancer()
+for _ in range(5):
+	droite()
+	avancer()
+while obstacle > 0:
+	if obstacle == False:
+		avancer()
+	if obstacle == True:
+		coup()","avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    obstacle = detecter_obstacle()
+for _ in range(3):
+    avancer()
+droite()
+for _ in range(5):
+    avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    avancer()
+    obstacle = detecter_obstacle()
+ouvrir()",2026-05-25 07:54:31.664113
+159,PYRATES,[PYRATES][Level8][#085],"Objectif : Ramasser la clé puis ouvrir le coffre. La solidité du tonneau (nombre dans le cercle), le nombre de pots ainsi que l'emplacement du coffre sont aléatoires et changent à chaque exécution. Un fois le tonneau détruit, de la dynamite apparait à sa place. Il ne faut pas donner de coup dans cette dynamite sous peine d’une explosion qui fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), coup(), detecter_obstacle(), ouvrir()
+Contraintes : Aucunes",/error-annotation/uploads/912c8ef67d7c47eba6fcbfd11d856596.png,"avancer()
+obstacle = detecter_obstacle()
+while obstacle > 0:
+	coup()
+	obstacle = detecter_obstacle()
+for i in range(14):
+	obstacle = detecter_obstacle()
+	if obstacle==True:
+		avancer()
+	elif obstacle== False:
+		avancer()
+	else:
+		gauche()
+	avancer()","avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    obstacle = detecter_obstacle()
+for _ in range(3):
+    avancer()
+droite()
+for _ in range(5):
+    avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    avancer()
+    obstacle = detecter_obstacle()
+ouvrir()",2026-05-26 00:30:22.625453
+160,PYRATES,[PYRATES][Level8][#086],"Objectif : Ramasser la clé puis ouvrir le coffre. La solidité du tonneau (nombre dans le cercle), le nombre de pots ainsi que l'emplacement du coffre sont aléatoires et changent à chaque exécution. Un fois le tonneau détruit, de la dynamite apparait à sa place. Il ne faut pas donner de coup dans cette dynamite sous peine d’une explosion qui fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), coup(), detecter_obstacle(), ouvrir()
+Contraintes : Aucunes",/error-annotation/uploads/cfd74441571d4fd29d1b9b05d14f5972.png,"avancer()
+def f():
+	obstacle=detecter_obstacle()
+	if obstacle == True:
+		coup()
+		detecter_obstacle()
+		while obstacle ==True:
+			coup()
+			obstacle=detecter_obstacle()
+	elif obstacle==False:
+		avancer()
+for i in range (4):
+	f()
+gauche()
+for i in range(11):
+	f()
+ouvrir()","avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    obstacle = detecter_obstacle()
+for _ in range(3):
+    avancer()
+droite()
+for _ in range(5):
+    avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    avancer()
+    obstacle = detecter_obstacle()
+ouvrir()",2026-05-26 00:37:13.285719
+161,PYRATES,[PYRATES][Level8][#087],"Objectif : Ramasser la clé puis ouvrir le coffre. La solidité du tonneau (nombre dans le cercle), le nombre de pots ainsi que l'emplacement du coffre sont aléatoires et changent à chaque exécution. Un fois le tonneau détruit, de la dynamite apparait à sa place. Il ne faut pas donner de coup dans cette dynamite sous peine d’une explosion qui fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), coup(), detecter_obstacle(), ouvrir()
+Contraintes : Aucunes",/error-annotation/uploads/a5e9670e0d224fe4a8f2d28076973953.png,"avancer()
+obstacle=detecter_obstacle()
+while obstacle > 0:
+	obstacle=detecter_obstacle()
+	if obstacle == False:
+		avancer()
+	if obstacle == True:
+		coup()
+for _ in range(2):
+	avancer()
+for _ in range(5):
+	droite()
+	avancer()
+while obstacle > 0:
+	obstacle=detecter_obstacle()
+	if obstacle == False:
+		avancer()
+	if obstacle == True:
+		coup()","avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    obstacle = detecter_obstacle()
+for _ in range(3):
+    avancer()
+droite()
+for _ in range(5):
+    avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    avancer()
+    obstacle = detecter_obstacle()
+ouvrir()",2026-05-26 00:43:26.114468
+162,PYRATES,[PYRATES][Level8][#088],"Objectif : Ramasser la clé puis ouvrir le coffre. La solidité du tonneau (nombre dans le cercle), le nombre de pots ainsi que l'emplacement du coffre sont aléatoires et changent à chaque exécution. Un fois le tonneau détruit, de la dynamite apparait à sa place. Il ne faut pas donner de coup dans cette dynamite sous peine d’une explosion qui fait perdre puis recommencer le niveau.
+Fonctions de contrôle : avancer(), gauche(), droite(), coup(), detecter_obstacle(), ouvrir()
+Contraintes : Aucunes",/error-annotation/uploads/fac68c9eb9194dedb14b9d230d7a15d4.png,"avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    obstacle = detecter_obstacle()
+for i in range(3):
+    avancer()
+droite()
+for i in range(5):
+    avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    avancer()
+    obstacle = detecter_obstacle()
+ouvrir()","avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    obstacle = detecter_obstacle()
+for _ in range(3):
+    avancer()
+droite()
+for _ in range(5):
+    avancer()
+obstacle = detecter_obstacle()
+while obstacle == True:
+    coup()
+    avancer()
+    obstacle = detecter_obstacle()
+ouvrir()",2026-05-26 00:51:41.885898
