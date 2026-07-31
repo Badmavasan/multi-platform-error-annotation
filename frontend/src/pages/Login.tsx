@@ -86,6 +86,7 @@ export default function Login() {
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSubmit(e)}
                 className="w-full px-3 py-2.5 rounded-lg text-sm font-mono border outline-none transition-all"
                 style={{
                   background: 'var(--bg-elevated)',
@@ -109,6 +110,7 @@ export default function Login() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSubmit(e)}
                 className="w-full px-3 py-2.5 rounded-lg text-sm font-mono border outline-none transition-all"
                 style={{
                   background: 'var(--bg-elevated)',
